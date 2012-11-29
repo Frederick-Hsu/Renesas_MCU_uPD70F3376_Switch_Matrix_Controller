@@ -1,0 +1,25 @@
+
+
+
+			How to implement the command message parsing?
+			
+		
+Command message frame format :
+	
+(1). dedicatedly for Action Catalog command message
+	$<Command_Group>:<Action_Catalog> <Parameter>:<Attribute>;[<Action_Catalog> <Parameter>:<Attribute>];...;[<Action_Catalog> <Parameter>:<Attribute>]<Command_Type>!
+		
+	$<Command_Group>:<Action_Catalog> <Parameter>:<Attribute1>,[<Attribute2>],...,[<AttributeN>]<Command_Type>!
+	
+	
+	
+(2). Frame format can be grouped in Kinds :
+	
+	Single parameter <----> Single attribute
+		Kind 1 ===>  <Action_Catalog> <Parameter>:<Attribute><Command_Type>
+	
+	Multi parameters <----> Multi attributes
+		Kind 2 ===>  <Action_Catalog> <Parameter1>:<Attribute1>;[<Action_Catalog> <Parameter2>:<Attribute2>];...;[<Action_Catalog> <ParameterN>:<AttributeN>]<Command_Type>
+	
+	Single parameter <----> Multi attributes
+		Kind 3 ===>  <Action_Catalog> <Parameter>:<Attribute1>,<Attribute2>,...,<AttributeN><Command_Type>

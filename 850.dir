@@ -1,0 +1,55 @@
+#/*
+#******************************************************************************
+#*
+#*  This device driver was created by Applilet2 for V850ES/Fx3
+#*  32-Bit Single-Chip Microcontrollers
+#*
+#*  Copyright(C) Renesas Electronics Corporation 2002 - 2012
+#*  All rights reserved by Renesas Electronics Corporation.
+#*
+#*  This program should be used on your own responsibility.
+#*  Renesas Electronics Corporation assumes no responsibility for any losses
+#*  incurred by customers or third parties arising from the use of this file.
+#*
+#*  Filename :	 850.dir
+#*  Abstract :	This is the link file.
+#*  APIlib :	Applilet2 for V850ES/Fx3 V2.43 [30 Mar 2011]
+#*
+#*  Device :	uPD70F3376
+#*
+#*  Compiler :	CA850
+#*
+#*  Creation date:	09/26/2012
+#*  
+#******************************************************************************
+#*/
+
+SCONST	: !LOAD ?R {
+	.sconst = $PROGBITS ?A .sconst;
+};
+CONST	: !LOAD ?R {
+	.const = $PROGBITS ?A .const;
+};		
+TEXT	: !LOAD ?RX {
+	.pro_epi_runtime = $PROGBITS ?AX .pro_epi_runtime;
+	.text = $PROGBITS ?AX .text;
+};
+SIDATA	: !LOAD ?RW V0x03FF9000 {
+	.tidata.byte = $PROGBITS ?AW .tidata.byte;
+	.tibss.byte = $NOBITS ?AW .tibss.byte;
+	.tidata.word = $PROGBITS ?AW .tidata.word;
+	.tibss.word = $NOBITS ?AW .tibss.word;
+	.tidata = $PROGBITS ?AW .tidata;
+	.tibss = $NOBITS ?AW .tibss;
+	.sidata = $PROGBITS ?AW .sidata;
+	.sibss = $NOBITS ?AW .sibss;
+};
+DATA	: !LOAD ?RW V0x03FF9100 {
+	.data = $PROGBITS ?AW .data;
+	.sdata = $PROGBITS ?AWG .sdata;
+	.sbss = $NOBITS ?AWG .sbss;
+	.bss = $NOBITS ?AW .bss;
+};
+__tp_TEXT @ %TP_SYMBOL{TEXT};
+__gp_DATA @ %GP_SYMBOL{DATA} &__tp_TEXT{DATA};
+__ep_DATA @ %EP_SYMBOL;

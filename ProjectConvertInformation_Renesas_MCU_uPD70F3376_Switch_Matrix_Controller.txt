@@ -1,0 +1,23 @@
+﻿Wednesday, September 26, 2012 17:21:31
+
+<IDE version>
+ CubeSuite+ IDE: V3.01.00  [18 Oct 2011]
+
+<Compiler package version>
+ CA850:  -> CA850: V3.50
+
+
+<Options not to use(Debug Build)>
+
+<Options not to use(Release Build)>
+
+
+
+<Options to change(Debug Build)>
+ CA850(Compile Options)
+  -Xpro_epi_runtime -> Auto
+
+<Options to change(Release Build)>
+
+
+

@@ -1,0 +1,118 @@
+	/********************************************************************************************************************************************************
+	 *
+	 * Project	: Switch_Matrix_Controller
+	 *
+	 * File name	: prototcol.txt
+	 *
+	 * Description	: To describe the "Protocol User Manual Guide and Design Regulations" in this file.
+	 *
+	 * Author	: XU ZAN
+	 *
+	 * Date		: Sun.	  Aug. 19, 2012
+	 *
+	 * Copyright(C)	2010 --- 2012	Hella (Shanghai) Electronics Co., Ltd.
+	 * All rights reserved.
+	 *
+	 ********************************************************************************************************************************************************/
+		
+	
+		
+	=========================================================================================================================================================
+	=																			=
+	=		========			    		   ==											=
+	=		||	\\	==   ====	  ==========	   ||		    =========	     =======	     =========	    ||			=
+	=		||	||	||  //  \\	 //	   \\	   ||		   //	    \\	    //              //	     \\	    ||			=
+	=		||	//	|| //    \\	//	    \\	 ==++=====	  //	     \\	   //		   //	      \\    ||			=
+	=		||======	||//		||	    ||	   ||		  ||	     ||    ||		   ||	      ||    ||			=
+	=		||		||		||	    ||	   ||		  ||	     ||	   ||		   ||	      ||    ||			=
+	=		||		||		\\	    //	   \\      //	  \\	     //	   \\		   \\         //    ||     		=
+	=		||		||		 \\	   //	    \\	  //	   \\	    //	    \\              \\	     //	    \\   //		=
+	=	       ====		==		  ==========	     =====	    =========	     =======	     =========	     =====		=
+	=																			=
+	=========================================================================================================================================================
+	
+	
+								USER  MANUAL  GUIDE
+									and
+								DESIGN  REGULATIONS
+	
+	
+	How to design the protocol?
+	
+		Design regulation : Reference to the syntax of GPIB IEEE-488.2 SCPI command programming language.
+				    =============================================================================
+	
+		(1) Command Groups :
+			Actions			Systems
+		
+		(2) Actions Catalog :
+			a.  CAN
+			b.  LIN
+			c.  ADC (alias : AIN)
+			d.  DAC (alias : AOUT)
+			e.  DIN
+			f.  DOUT
+			g.  Switch
+			h.  PWM*
+		
+		(3) Command type :
+			i. Request		ii. Query (append "?" at the end of cmmand)
+		
+		(4) Command prefix and suffix :
+			Command Starding indicator : $
+			Command Ending indicator   : !
+		
+		(5) Command seperator :
+			# Colon     (:)  to seperate a command keyword from a lower level keyword
+			# Blank     ( )  to seperate a parameter from a command keyword
+			# Comma     (,)  is used if a command requires more than 1 parameter
+			# Semicolon (;)  to combine commands from the same subsystem into one message string
+		
+		
+		
+	Enumerate alomost all command here :
+	
+		ACTIon :
+			SWITCH catalog : 
+				$ACTIon:SWITch 0x01:12 ON!
+				$ACTIon:SWITch 0x5F:05 OFF;SWITch 0x03:24 ON;SWITch 0x07:01 OFF;SWITch 0x80:15 ON!
+				$ACTIon:SWITch 0x04:18 OFF,09 ON,11 ON,07 OFF,21 ON!
+			
+			ADC catalog :
+				$ACTIon:ADC CH2:VOLT?!
+				$ACTIon:ADC *:VOLT?!
+				$ACTIon:ADC CH1:VOLT?;ADC CH3:VOLT?;ADC CH7:VOLT?!
+				$ACTIon:ADC CH5:CURRent 82.5?!
+				$ACTIon:ADC CH7:CURRent 128.35?;ADC CH8:CURRent 65.80?!
+			
+			DAC catalog : 
+				$ACTIon:DAC:VOLT 5!
+				$ACTIon:DAC:VOLT -12.5!
+			
+			DIN catalog : 
+				$ACTIon:DIN CH2:STATe?!
+				$ACTIon:DIN CH5:STATe?;DIN CH8:STATe?DIN CH7:STATe?;DIN CH24:STATe?!
+			
+			DOUT catalog : 
+				$ACTIon:DOUT 0x05:16 HIGH!
+				$ACTIon:DOUT 0x08:21 LOW;DOUT 0x03:19 LOW;DOUT 0x10:04 HIGH!
+			
+			PWM catalog :
+				$ACTIon:PWM CH#:Freq DutyCycle!
+
+		
+		
+		SYSTem : 
+			Error catalog :
+				$SYSTem:ERR?!
+				$SYSTem:IDN?!
+
+
+
+
+
+
+
+
+
+
