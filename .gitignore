@@ -1,0 +1,8 @@
+# The ignore file type list :
+
+*.o
+*.out
+*.hex
+DefaultBuild/
+
+
