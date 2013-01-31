@@ -51,8 +51,8 @@ int handling_Switch_Relay_Control_cmd(char* sSwitch_Relay_Ctrl_cmd_Mesg)
 	     *pIndexOfTerminalSignChar = NULL;		// "!"
 
 	char sTemp_1CmdUnit_String[128] = {0},	// for example : <Action_Catalog> <Parameter1>:<Attribute1>;   "SWITch 0x5F:05 OFF;"
-	     sTempSubString[1024] = {0},
-	     sRestSubStringOfCmdMesg[1024] = {0};
+	     sTempSubString[256] = {0},
+	     sRestSubStringOfCmdMesg[256] = {0};
 
 	// uiPosOfCmdSeperator_Semicolon = strcspn(sSwitch_Relay_Ctrl_cmd_Mesg, ";");
 
@@ -112,8 +112,8 @@ int handling_Multi_Switches(char* sMulti_Switch_Ctrl_Cmd_Mesg)
 		     uiPosOfBlank = 0;
 		     
 	char sTemp_1CmdUnit_String[128] = {0},
-	     sRestSubStringOfCmdMesg[1024] = {0},
-	     sTempRestSubString[1024] = {0};
+	     sRestSubStringOfCmdMesg[256] = {0},
+	     sTempRestSubString[256] = {0};
 
 	uiPosOfSemicolon = strcspn(sMulti_Switch_Ctrl_Cmd_Mesg, ";");	// Search the 1st semicolon (;)
 	uiPosOfColon = strcspn(sMulti_Switch_Ctrl_Cmd_Mesg, ":");		// Search the 1st colon (:)

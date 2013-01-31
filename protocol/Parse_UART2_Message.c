@@ -37,7 +37,7 @@ int Parse_UART2_Received_Message(char *sMesg)
 	
 	char sCommand_Group[64] = "",
 	     sAction_Catalog[64] = "";
-	char sTempSubString[1024] = {0};
+	char sTempSubString[256] = {0};
 	char cTempChar = '0';
 	     
 	char cCommand_Type[2] = "";

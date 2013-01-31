@@ -76,7 +76,7 @@ extern	volatile USHORT	gUartd4RxLen;
 /* Start user code for global definition. Do not edit comment generated here */
 /* End user code for global definition. Do not edit comment generated here */
 
-UCHAR sTemp[1024] = {0};
+UCHAR sTemp[256] = {0};
 int iCnt = 0;
 
 /*
@@ -293,7 +293,7 @@ __interrupt void MD_INTUD2R(void)
 		}
 	#else
 		
-		UCHAR sRxBuf[1024] = {0};
+		UCHAR sRxBuf[256] = {0};
 		USHORT nRxBufLen;
 		MD_STATUS Status = MD_OK;
 		
