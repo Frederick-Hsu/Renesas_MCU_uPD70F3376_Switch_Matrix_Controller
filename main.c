@@ -61,7 +61,7 @@
 #endif
 
 #define ADC_DEBUG
-
+unsigned char rxbuf[32] = {0};	
 /*
 *******************************************************************************
 **  Global define
@@ -89,7 +89,7 @@ void  main(void)
 */
 {
 	long i = 0, j = 0;
-	UCHAR rxbuf[256] = {0};	
+	//UCHAR rxbuf[256] = {0};	
 
 	SystemInit();
 	
@@ -105,9 +105,8 @@ void  main(void)
 	
 	UARTD2_Start();		// Open the COM port, communicating with PC.
 
-	UARTD2_ReceiveData(rxbuf, 256);	
-	// Parse_UART2_Received_Message(rxbuf);
-
+	UARTD2_ReceiveData(rxbuf,256);	
+	
 	for (i=0; i<5000000; i++)
 	{
 		NOP();
