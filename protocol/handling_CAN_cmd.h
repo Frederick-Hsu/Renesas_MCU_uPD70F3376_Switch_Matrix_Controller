@@ -14,6 +14,7 @@
 
 	int handling_CANWrite_cmd(char *sARGIN_CanWriteMesg);
 	int handling_CANRead_cmd(char *sARGIN_CanReadMesg);
+    int handling_CANConfig_cmd(char *sARGIN_CanConfigMesg);
 	
 	int Parse_CAN_Data(char sRawCanData[], unsigned char *sParsedCanData);
 
