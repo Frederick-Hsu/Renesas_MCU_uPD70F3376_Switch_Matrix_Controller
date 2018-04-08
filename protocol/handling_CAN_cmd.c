@@ -14,6 +14,7 @@
 #include "../macrodriver.h"
 #include "../utility.h"
 #include "../can.h"
+#include "../CAN/CAN_Control.h"
 
 #include <string.h>
 
@@ -90,6 +91,31 @@ int handling_CANRead_cmd(char *sARGIN_CanReadMesg)
 	int iError = 0;
 	
 	return iError;
+}
+
+int handling_CANConfig_cmd(char *sARGIN_CanConfigMesg)
+{
+    int iError = 0;
+    unsigned int uiPosOfCmdSeparator_Colon = strcspn(sARGIN_CanConfigMesg, ":"),
+                 uiLen = strlen(sARGIN_CanConfigMesg),
+                 uiPosOfCmdSeparator_Space = 0;
+    char sCanConfigMesg[32] = {0x00}, sCanBaudRate[16] = {0x00};
+    
+    if (uiLen == uiPosOfCmdSeparator_Colon)
+    {
+        g_iErrorCodeNo = -49;
+        return g_iErrorCodeNo;
+    }
+    strncpy(sCanConfigMesg, sARGIN_CanConfigMesg+uiPosOfCmdSeparator_Colon+1, uiLen-uiPosOfCmdSeparator_Colon-2);
+    if (strncmp(sCanConfigMesg, "BAUD", 4) != 0)
+    {
+        g_iErrorCodeNo = -50;
+        return g_iErrorCodeNo;
+    }
+    uiPosOfCmdSeparator_Space = strcspn(sCanConfigMesg, " ");
+    strncpy(sCanBaudRate, sCanConfigMesg+uiPosOfCmdSeparator_Space+1, strlen(sCanConfigMesg)-uiPosOfCmdSeparator_Space-1);
+    iError = Set_CAN_BaudRate(sCanBaudRate);
+    return iError;
 }
 
 /*

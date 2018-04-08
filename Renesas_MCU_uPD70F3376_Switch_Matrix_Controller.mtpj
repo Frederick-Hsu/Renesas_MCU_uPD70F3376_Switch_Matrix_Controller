@@ -1,9 +1,9 @@
 <CubeSuiteProject>
-  <ProductVersion>3.01.00.00</ProductVersion>
+  <ProductVersion>5.02.00.00</ProductVersion>
   <Class Guid="68f4a651-b9cd-473b-a595-b00447132ffa">
     <Instance Guid="00000000-0000-0000-0000-000000000000">
       <FormatVersion>2.0</FormatVersion>
-      <FileVersion>3.1</FileVersion>
+      <FileVersion>5.2</FileVersion>
       <ProjectGuid>670ce547-c110-4266-9b4c-2b20db9a7c0e</ProjectGuid>
       <ProjectItemGuid>31522521-cc2a-4ca4-8e76-f928e253a6e0</ProjectItemGuid>
       <FileCategoryGuid>270dc9de-9c0f-4a91-8962-9901492f4c6f</FileCategoryGuid>
@@ -385,6 +385,22 @@
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>2257bab1-828d-4c14-b3fd-f157b1ca6419</ParentItem>
       <Property>5656cb44-b4a3-45fd-8838-0fd01a0c9929</Property>
+    </Instance>
+    <Instance Guid="c26b9dbe-d45b-4b60-895c-9c470d7aabe9">
+      <Name>CAN_Control.c</Name>
+      <Type>File</Type>
+      <RelativePath>CAN\CAN_Control.c</RelativePath>
+      <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
+      <ParentItem>57e76d9f-7f4d-4376-8e1b-a1c400436c96</ParentItem>
+      <Property>e3fe760c-997b-44d8-b0f9-04c9e1e9d8e9</Property>
+    </Instance>
+    <Instance Guid="eca6cc01-98a9-4fd2-b38a-8218a50ef2f6">
+      <Name>CAN_Control.h</Name>
+      <Type>File</Type>
+      <RelativePath>CAN\CAN_Control.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>57e76d9f-7f4d-4376-8e1b-a1c400436c96</ParentItem>
+      <Property>64d7ec1e-e80f-4050-90e5-06cf0a5d21f2</Property>
     </Instance>
     <Instance Guid="84ddf882-e9d6-4187-aa18-7d49be568e4f">
       <Name>Protocol.txt</Name>
@@ -1010,6 +1026,12 @@
     <Instance Guid="423a0fb7-8100-49ce-aae7-0b50d168383a">
       <MemoCount>0</MemoCount>
     </Instance>
+    <Instance Guid="e3fe760c-997b-44d8-b0f9-04c9e1e9d8e9">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="64d7ec1e-e80f-4050-90e5-06cf0a5d21f2">
+      <MemoCount>0</MemoCount>
+    </Instance>
   </Class>
   <Class Guid="78a5c5cd-76cb-4bcc-a031-3020011fbc9a">
     <Instance Guid="6cfdcd04-a477-447e-9a22-0eaa67fed857">
@@ -1063,6 +1085,12 @@
     <Instance Guid="ae01dd98-5dbc-4f41-8257-b04d52978eef">
       <DeviceName>uPD70F3376</DeviceName>
       <MemoCount>0</MemoCount>
+    </Instance>
+  </Class>
+  <Class Guid="873c9a58-9bc5-439a-b476-78629a4553ed">
+    <Instance Guid="873c9a58-9bc5-439a-b476-78629a4553ed">
+      <ProjectDeviceChangedCounter>0</ProjectDeviceChangedCounter>
+      <ProjectInitialDeviceName>uPD70F3376</ProjectInitialDeviceName>
     </Instance>
   </Class>
   <Class Guid="c3835e31-dea3-4c93-b02b-d2db997f7630">
@@ -1163,8 +1191,11 @@
       <SourceItemType39>CSource</SourceItemType39>
       <SourceItemGuid40>3a5cd435-25bb-4ec8-b5bb-57652a2d92d6</SourceItemGuid40>
       <SourceItemType40>CSource</SourceItemType40>
-      <SourceItemCount>41</SourceItemCount>
+      <SourceItemGuid41>c26b9dbe-d45b-4b60-895c-9c470d7aabe9</SourceItemGuid41>
+      <SourceItemType41>CSource</SourceItemType41>
+      <SourceItemCount>42</SourceItemCount>
       <SectionSourceItemCount>0</SectionSourceItemCount>
+      <LastDeviceChangedCounter>0</LastDeviceChangedCounter>
     </Instance>
     <Instance Guid="33b17284-4937-470c-94e4-fc201c717342">
       <AdditionalIncludePathsForAssembler-DefaultValue />
@@ -1211,6 +1242,7 @@
       <PreBuildCommands-DefaultValue />
       <SecurityId-DefaultValue>ffffffffffffffffffff</SecurityId-DefaultValue>
       <PostBuildCommands-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588430241791811816</TimeTagModified--0>
       <BuildMode-0>DefaultBuild</BuildMode-0>
       <Memo-0 />
@@ -1348,8 +1380,10 @@
       <DisableBitOperationReplacement-DefaultValue>False</DisableBitOperationReplacement-DefaultValue>
       <TruncateAlignment-DefaultValue>False</TruncateAlignment-DefaultValue>
       <StrongestOptimization-DefaultValue>False</StrongestOptimization-DefaultValue>
-      <TimeTagModified--0>-8588056832474544818</TimeTagModified--0>
-      <AdditionalIncludePaths-0>PWM
+      <IsLockedByUser>False</IsLockedByUser>
+      <TimeTagModified--0>-8586784033579790173</TimeTagModified--0>
+      <AdditionalIncludePaths-0>CAN
+PWM
 protocol
 ADC_and_DAC
 Switch_Relay_Control
@@ -1425,8 +1459,9 @@ DIO
       <DisableBitOperationReplacement-0>False</DisableBitOperationReplacement-0>
       <TruncateAlignment-0>False</TruncateAlignment-0>
       <StrongestOptimization-0>False</StrongestOptimization-0>
-      <TimeTagModified--1>-8588056832474544818</TimeTagModified--1>
-      <AdditionalIncludePaths-1 />
+      <TimeTagModified--1>-8586784033579199730</TimeTagModified--1>
+      <AdditionalIncludePaths-1>CAN
+</AdditionalIncludePaths-1>
       <BitFieldSign-1>True</BitFieldSign-1>
       <DebugInformation-1>True</DebugInformation-1>
       <ExternalVariableNameAssignToR15-1 />
@@ -1497,8 +1532,9 @@ DIO
       <DisableBitOperationReplacement-1>False</DisableBitOperationReplacement-1>
       <TruncateAlignment-1>False</TruncateAlignment-1>
       <StrongestOptimization-1>False</StrongestOptimization-1>
-      <TimeTagModified--2>-8588056832474544818</TimeTagModified--2>
-      <AdditionalIncludePaths-2>protocol
+      <TimeTagModified--2>-8586784033578427288</TimeTagModified--2>
+      <AdditionalIncludePaths-2>CAN
+protocol
 </AdditionalIncludePaths-2>
       <BitFieldSign-2>True</BitFieldSign-2>
       <DebugInformation-2>True</DebugInformation-2>
@@ -1587,6 +1623,7 @@ DIO
       <WarnDestinationRegisterIsMask-DefaultValue>True</WarnDestinationRegisterIsMask-DefaultValue>
       <PostAssembleCommands-DefaultValue />
       <OtherAdditionalOptions-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588529555939163212</TimeTagModified--0>
       <AdditionalIncludePaths-0 />
       <AssembleListFile-0>False</AssembleListFile-0>
@@ -1671,6 +1708,7 @@ DIO
       <PreLinkCommands-DefaultValue />
       <PostLinkCommands-DefaultValue />
       <OtherAdditionalOptions-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588274944229773002</TimeTagModified--0>
       <EntrySymbol-0 />
       <LibraryFiles-0 />
@@ -1795,6 +1833,7 @@ DIO
       <PreRomizeCommands-DefaultValue />
       <PostRomizeCommands-DefaultValue />
       <OtherAdditionalOptions-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588529555547062663</TimeTagModified--0>
       <EntryLabel-0>__S_romp</EntryLabel-0>
       <MemoryMapFile-0>True</MemoryMapFile-0>
@@ -1879,6 +1918,7 @@ DIO
       <SpecifyOutputFileOffset-DefaultValue>False</SpecifyOutputFileOffset-DefaultValue>
       <OutputAddressOffset-DefaultValue>0x0</OutputAddressOffset-DefaultValue>
       <FillingNonInitializedSectionWithZero-DefaultValue>False</FillingNonInitializedSectionWithZero-DefaultValue>
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588529555939163212</TimeTagModified--0>
       <ConvertSymbolTable-0>NoConvert</ConvertSymbolTable-0>
       <HexadecimalFileFormat-0>IntelExtended</HexadecimalFileFormat-0>
@@ -1947,6 +1987,7 @@ DIO
       <OutputFileName-DefaultValue>lib%ProjectName%.a</OutputFileName-DefaultValue>
       <PostArchiveCommands-DefaultValue />
       <OtherAdditionalOptions-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588274944229773002</TimeTagModified--0>
       <OutputFolder-0>%BuildModeName%</OutputFolder-0>
       <PreArchiveCommands-0 />
@@ -1990,6 +2031,7 @@ DIO
       <SpecifySDataSectionSize-DefaultValue>False</SpecifySDataSectionSize-DefaultValue>
       <SDataSectionSize-DefaultValue>65536</SDataSectionSize-DefaultValue>
       <ExcludedOptimizationVariables-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588529555939163212</TimeTagModified--0>
       <CommentLevel-0>Level1</CommentLevel-0>
       <SortKeyOfVariable-0>FrequencyOfUse</SortKeyOfVariable-0>
@@ -2057,6 +2099,7 @@ DIO
     <Instance Guid="a6ca9276-b8bb-481c-b4ba-579250cd0c1d">
       <UseDump-DefaultValue>False</UseDump-DefaultValue>
       <OtherAdditionalOptions-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588529555939163212</TimeTagModified--0>
       <UseDump-0>False</UseDump-0>
       <OtherAdditionalOptions-0 />
@@ -2070,6 +2113,7 @@ DIO
     <Instance Guid="9305605d-c4a0-452a-8b65-9a0f7c767d26">
       <UseCrossReferenceTool-DefaultValue>False</UseCrossReferenceTool-DefaultValue>
       <OtherAdditionalOptions-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588529555939163212</TimeTagModified--0>
       <UseCrossReferenceTool-0>False</UseCrossReferenceTool-0>
       <OtherAdditionalOptions-0 />
@@ -2083,6 +2127,7 @@ DIO
     <Instance Guid="7d53ff66-ad99-4744-8e8d-f663255d8910">
       <UseMemoryLayoutTool-DefaultValue>False</UseMemoryLayoutTool-DefaultValue>
       <OtherAdditionalOptions-DefaultValue />
+      <IsLockedByUser>False</IsLockedByUser>
       <TimeTagModified--0>-8588529555939163212</TimeTagModified--0>
       <UseMemoryLayoutTool-0>False</UseMemoryLayoutTool-0>
       <OtherAdditionalOptions-0 />
@@ -2433,8 +2478,17 @@ DIO
       <ItemAddTime>635315492381500990</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
+    <Instance Guid="c26b9dbe-d45b-4b60-895c-9c470d7aabe9">
+      <ItemAddTime>636588291003320066</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="eca6cc01-98a9-4fd2-b38a-8218a50ef2f6">
+      <ItemAddTime>636588291276848551</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
     <Instance Guid="2317529b-91c1-49b6-8351-6d8f51718b0d">
       <TimeTagModified-SourceItem0--0>-8588529555936463208</TimeTagModified-SourceItem0--0>
+      <SourceItem0-IsLockedByUser>False</SourceItem0-IsLockedByUser>
       <SourceItem0-BuildingTarget-0>True</SourceItem0-BuildingTarget-0>
       <TimeTagModified-SourceItem0--1>-8588529555936463208</TimeTagModified-SourceItem0--1>
       <SourceItem0-BuildingTarget-1>True</SourceItem0-BuildingTarget-1>
@@ -2443,6 +2497,7 @@ DIO
     </Instance>
     <Instance Guid="3b48ef95-bc42-4782-aad5-df230136a6b8">
       <TimeTagModified-SourceItem1--0>-8588521782933435865</TimeTagModified-SourceItem1--0>
+      <SourceItem1-IsLockedByUser>False</SourceItem1-IsLockedByUser>
       <SourceItem1-BuildingTarget-0>True</SourceItem1-BuildingTarget-0>
       <SourceItem1-IndividualCompileOption-0>False</SourceItem1-IndividualCompileOption-0>
       <TimeTagModified-SourceItem1--1>-8588521782933435865</TimeTagModified-SourceItem1--1>
@@ -2452,6 +2507,7 @@ DIO
       <SourceItem1-BuildingTarget-2>True</SourceItem1-BuildingTarget-2>
       <SourceItem1-IndividualCompileOption-2>False</SourceItem1-IndividualCompileOption-2>
       <TimeTagModified-SourceItem2--0>-8588521780959162645</TimeTagModified-SourceItem2--0>
+      <SourceItem2-IsLockedByUser>False</SourceItem2-IsLockedByUser>
       <SourceItem2-BuildingTarget-0>True</SourceItem2-BuildingTarget-0>
       <SourceItem2-IndividualCompileOption-0>False</SourceItem2-IndividualCompileOption-0>
       <TimeTagModified-SourceItem2--1>-8588521780959162645</TimeTagModified-SourceItem2--1>
@@ -2461,6 +2517,7 @@ DIO
       <SourceItem2-BuildingTarget-2>True</SourceItem2-BuildingTarget-2>
       <SourceItem2-IndividualCompileOption-2>False</SourceItem2-IndividualCompileOption-2>
       <TimeTagModified-SourceItem3--0>-8588521766711331805</TimeTagModified-SourceItem3--0>
+      <SourceItem3-IsLockedByUser>False</SourceItem3-IsLockedByUser>
       <SourceItem3-BuildingTarget-0>True</SourceItem3-BuildingTarget-0>
       <SourceItem3-IndividualCompileOption-0>False</SourceItem3-IndividualCompileOption-0>
       <TimeTagModified-SourceItem3--1>-8588521766711331805</TimeTagModified-SourceItem3--1>
@@ -2470,6 +2527,7 @@ DIO
       <SourceItem3-BuildingTarget-2>True</SourceItem3-BuildingTarget-2>
       <SourceItem3-IndividualCompileOption-2>False</SourceItem3-IndividualCompileOption-2>
       <TimeTagModified-SourceItem4--0>-8588507871698191256</TimeTagModified-SourceItem4--0>
+      <SourceItem4-IsLockedByUser>False</SourceItem4-IsLockedByUser>
       <SourceItem4-BuildingTarget-0>True</SourceItem4-BuildingTarget-0>
       <SourceItem4-IndividualCompileOption-0>False</SourceItem4-IndividualCompileOption-0>
       <TimeTagModified-SourceItem4--1>-8588507871698191256</TimeTagModified-SourceItem4--1>
@@ -2479,6 +2537,7 @@ DIO
       <SourceItem4-BuildingTarget-2>True</SourceItem4-BuildingTarget-2>
       <SourceItem4-IndividualCompileOption-2>False</SourceItem4-IndividualCompileOption-2>
       <TimeTagModified-SourceItem5--0>-8588521721280410102</TimeTagModified-SourceItem5--0>
+      <SourceItem5-IsLockedByUser>False</SourceItem5-IsLockedByUser>
       <SourceItem5-BuildingTarget-0>True</SourceItem5-BuildingTarget-0>
       <SourceItem5-IndividualCompileOption-0>False</SourceItem5-IndividualCompileOption-0>
       <TimeTagModified-SourceItem5--1>-8588521721280410102</TimeTagModified-SourceItem5--1>
@@ -2488,6 +2547,7 @@ DIO
       <SourceItem5-BuildingTarget-2>True</SourceItem5-BuildingTarget-2>
       <SourceItem5-IndividualCompileOption-2>False</SourceItem5-IndividualCompileOption-2>
       <TimeTagModified-SourceItem6--0>-8588503890302935899</TimeTagModified-SourceItem6--0>
+      <SourceItem6-IsLockedByUser>False</SourceItem6-IsLockedByUser>
       <SourceItem6-BuildingTarget-0>True</SourceItem6-BuildingTarget-0>
       <SourceItem6-IndividualCompileOption-0>False</SourceItem6-IndividualCompileOption-0>
       <TimeTagModified-SourceItem6--1>-8588503890302935899</TimeTagModified-SourceItem6--1>
@@ -2497,6 +2557,7 @@ DIO
       <SourceItem6-BuildingTarget-2>True</SourceItem6-BuildingTarget-2>
       <SourceItem6-IndividualCompileOption-2>False</SourceItem6-IndividualCompileOption-2>
       <TimeTagModified-SourceItem9--0>-8588529555937563210</TimeTagModified-SourceItem9--0>
+      <SourceItem9-IsLockedByUser>False</SourceItem9-IsLockedByUser>
       <SourceItem9-BuildingTarget-0>True</SourceItem9-BuildingTarget-0>
       <SourceItem9-IndividualCompileOption-0>False</SourceItem9-IndividualCompileOption-0>
       <TimeTagModified-SourceItem9--1>-8588529555937563210</TimeTagModified-SourceItem9--1>
@@ -2506,6 +2567,7 @@ DIO
       <SourceItem9-BuildingTarget-2>True</SourceItem9-BuildingTarget-2>
       <SourceItem9-IndividualCompileOption-2>False</SourceItem9-IndividualCompileOption-2>
       <TimeTagModified-SourceItem10--0>-8588529555937563210</TimeTagModified-SourceItem10--0>
+      <SourceItem10-IsLockedByUser>False</SourceItem10-IsLockedByUser>
       <SourceItem10-BuildingTarget-0>True</SourceItem10-BuildingTarget-0>
       <SourceItem10-IndividualCompileOption-0>False</SourceItem10-IndividualCompileOption-0>
       <TimeTagModified-SourceItem10--1>-8588529555937563210</TimeTagModified-SourceItem10--1>
@@ -2515,6 +2577,7 @@ DIO
       <SourceItem10-BuildingTarget-2>True</SourceItem10-BuildingTarget-2>
       <SourceItem10-IndividualCompileOption-2>False</SourceItem10-IndividualCompileOption-2>
       <TimeTagModified-SourceItem11--0>-8588529555937563210</TimeTagModified-SourceItem11--0>
+      <SourceItem11-IsLockedByUser>False</SourceItem11-IsLockedByUser>
       <SourceItem11-BuildingTarget-0>True</SourceItem11-BuildingTarget-0>
       <SourceItem11-IndividualCompileOption-0>False</SourceItem11-IndividualCompileOption-0>
       <TimeTagModified-SourceItem11--1>-8588529555937563210</TimeTagModified-SourceItem11--1>
@@ -2524,6 +2587,7 @@ DIO
       <SourceItem11-BuildingTarget-2>True</SourceItem11-BuildingTarget-2>
       <SourceItem11-IndividualCompileOption-2>False</SourceItem11-IndividualCompileOption-2>
       <TimeTagModified-SourceItem12--0>-8588529555937463210</TimeTagModified-SourceItem12--0>
+      <SourceItem12-IsLockedByUser>False</SourceItem12-IsLockedByUser>
       <SourceItem12-BuildingTarget-0>True</SourceItem12-BuildingTarget-0>
       <SourceItem12-IndividualCompileOption-0>False</SourceItem12-IndividualCompileOption-0>
       <TimeTagModified-SourceItem12--1>-8588529555937463210</TimeTagModified-SourceItem12--1>
@@ -2533,6 +2597,7 @@ DIO
       <SourceItem12-BuildingTarget-2>True</SourceItem12-BuildingTarget-2>
       <SourceItem12-IndividualCompileOption-2>False</SourceItem12-IndividualCompileOption-2>
       <TimeTagModified-SourceItem13--0>-8588529555937463210</TimeTagModified-SourceItem13--0>
+      <SourceItem13-IsLockedByUser>False</SourceItem13-IsLockedByUser>
       <SourceItem13-BuildingTarget-0>True</SourceItem13-BuildingTarget-0>
       <SourceItem13-IndividualCompileOption-0>False</SourceItem13-IndividualCompileOption-0>
       <TimeTagModified-SourceItem13--1>-8588529555937463210</TimeTagModified-SourceItem13--1>
@@ -2542,6 +2607,7 @@ DIO
       <SourceItem13-BuildingTarget-2>True</SourceItem13-BuildingTarget-2>
       <SourceItem13-IndividualCompileOption-2>False</SourceItem13-IndividualCompileOption-2>
       <TimeTagModified-SourceItem14--0>-8588529555937463210</TimeTagModified-SourceItem14--0>
+      <SourceItem14-IsLockedByUser>False</SourceItem14-IsLockedByUser>
       <SourceItem14-BuildingTarget-0>True</SourceItem14-BuildingTarget-0>
       <SourceItem14-IndividualCompileOption-0>False</SourceItem14-IndividualCompileOption-0>
       <TimeTagModified-SourceItem14--1>-8588529555937463210</TimeTagModified-SourceItem14--1>
@@ -2551,6 +2617,7 @@ DIO
       <SourceItem14-BuildingTarget-2>True</SourceItem14-BuildingTarget-2>
       <SourceItem14-IndividualCompileOption-2>False</SourceItem14-IndividualCompileOption-2>
       <TimeTagModified-SourceItem15--0>-8588529555937463210</TimeTagModified-SourceItem15--0>
+      <SourceItem15-IsLockedByUser>False</SourceItem15-IsLockedByUser>
       <SourceItem15-BuildingTarget-0>True</SourceItem15-BuildingTarget-0>
       <SourceItem15-IndividualCompileOption-0>False</SourceItem15-IndividualCompileOption-0>
       <TimeTagModified-SourceItem15--1>-8588529555937463210</TimeTagModified-SourceItem15--1>
@@ -2560,6 +2627,7 @@ DIO
       <SourceItem15-BuildingTarget-2>True</SourceItem15-BuildingTarget-2>
       <SourceItem15-IndividualCompileOption-2>False</SourceItem15-IndividualCompileOption-2>
       <TimeTagModified-SourceItem16--0>-8588529555937463210</TimeTagModified-SourceItem16--0>
+      <SourceItem16-IsLockedByUser>False</SourceItem16-IsLockedByUser>
       <SourceItem16-BuildingTarget-0>True</SourceItem16-BuildingTarget-0>
       <SourceItem16-IndividualCompileOption-0>False</SourceItem16-IndividualCompileOption-0>
       <TimeTagModified-SourceItem16--1>-8588529555937463210</TimeTagModified-SourceItem16--1>
@@ -2569,6 +2637,7 @@ DIO
       <SourceItem16-BuildingTarget-2>True</SourceItem16-BuildingTarget-2>
       <SourceItem16-IndividualCompileOption-2>False</SourceItem16-IndividualCompileOption-2>
       <TimeTagModified-SourceItem17--0>-8588529555937363209</TimeTagModified-SourceItem17--0>
+      <SourceItem17-IsLockedByUser>False</SourceItem17-IsLockedByUser>
       <SourceItem17-BuildingTarget-0>True</SourceItem17-BuildingTarget-0>
       <SourceItem17-IndividualCompileOption-0>False</SourceItem17-IndividualCompileOption-0>
       <TimeTagModified-SourceItem17--1>-8588529555937363209</TimeTagModified-SourceItem17--1>
@@ -2578,6 +2647,7 @@ DIO
       <SourceItem17-BuildingTarget-2>True</SourceItem17-BuildingTarget-2>
       <SourceItem17-IndividualCompileOption-2>False</SourceItem17-IndividualCompileOption-2>
       <TimeTagModified-SourceItem18--0>-8588529555937363209</TimeTagModified-SourceItem18--0>
+      <SourceItem18-IsLockedByUser>False</SourceItem18-IsLockedByUser>
       <SourceItem18-BuildingTarget-0>True</SourceItem18-BuildingTarget-0>
       <SourceItem18-IndividualCompileOption-0>False</SourceItem18-IndividualCompileOption-0>
       <TimeTagModified-SourceItem18--1>-8588529555937363209</TimeTagModified-SourceItem18--1>
@@ -2587,6 +2657,7 @@ DIO
       <SourceItem18-BuildingTarget-2>True</SourceItem18-BuildingTarget-2>
       <SourceItem18-IndividualCompileOption-2>False</SourceItem18-IndividualCompileOption-2>
       <TimeTagModified-SourceItem19--0>-8588529555937363209</TimeTagModified-SourceItem19--0>
+      <SourceItem19-IsLockedByUser>False</SourceItem19-IsLockedByUser>
       <SourceItem19-BuildingTarget-0>True</SourceItem19-BuildingTarget-0>
       <SourceItem19-IndividualCompileOption-0>False</SourceItem19-IndividualCompileOption-0>
       <TimeTagModified-SourceItem19--1>-8588529555937363209</TimeTagModified-SourceItem19--1>
@@ -2596,6 +2667,7 @@ DIO
       <SourceItem19-BuildingTarget-2>True</SourceItem19-BuildingTarget-2>
       <SourceItem19-IndividualCompileOption-2>False</SourceItem19-IndividualCompileOption-2>
       <TimeTagModified-SourceItem20--0>-8588529555937263209</TimeTagModified-SourceItem20--0>
+      <SourceItem20-IsLockedByUser>False</SourceItem20-IsLockedByUser>
       <SourceItem20-BuildingTarget-0>True</SourceItem20-BuildingTarget-0>
       <SourceItem20-IndividualCompileOption-0>False</SourceItem20-IndividualCompileOption-0>
       <TimeTagModified-SourceItem20--1>-8588529555937263209</TimeTagModified-SourceItem20--1>
@@ -2605,6 +2677,7 @@ DIO
       <SourceItem20-BuildingTarget-2>True</SourceItem20-BuildingTarget-2>
       <SourceItem20-IndividualCompileOption-2>False</SourceItem20-IndividualCompileOption-2>
       <TimeTagModified-SourceItem21--0>-8588500914334722973</TimeTagModified-SourceItem21--0>
+      <SourceItem21-IsLockedByUser>False</SourceItem21-IsLockedByUser>
       <SourceItem21-BuildingTarget-0>True</SourceItem21-BuildingTarget-0>
       <SourceItem21-IndividualCompileOption-0>False</SourceItem21-IndividualCompileOption-0>
       <TimeTagModified-SourceItem21--1>-8588500914334722973</TimeTagModified-SourceItem21--1>
@@ -2614,6 +2687,7 @@ DIO
       <SourceItem21-BuildingTarget-2>True</SourceItem21-BuildingTarget-2>
       <SourceItem21-IndividualCompileOption-2>False</SourceItem21-IndividualCompileOption-2>
       <TimeTagModified-SourceItem22--0>-8588500910034381095</TimeTagModified-SourceItem22--0>
+      <SourceItem22-IsLockedByUser>False</SourceItem22-IsLockedByUser>
       <SourceItem22-BuildingTarget-0>True</SourceItem22-BuildingTarget-0>
       <SourceItem22-IndividualCompileOption-0>False</SourceItem22-IndividualCompileOption-0>
       <TimeTagModified-SourceItem22--1>-8588500910034381095</TimeTagModified-SourceItem22--1>
@@ -2623,6 +2697,7 @@ DIO
       <SourceItem22-BuildingTarget-2>True</SourceItem22-BuildingTarget-2>
       <SourceItem22-IndividualCompileOption-2>False</SourceItem22-IndividualCompileOption-2>
       <TimeTagModified-SourceItem23--0>-8588500909742171877</TimeTagModified-SourceItem23--0>
+      <SourceItem23-IsLockedByUser>False</SourceItem23-IsLockedByUser>
       <SourceItem23-BuildingTarget-0>True</SourceItem23-BuildingTarget-0>
       <SourceItem23-IndividualCompileOption-0>False</SourceItem23-IndividualCompileOption-0>
       <TimeTagModified-SourceItem23--1>-8588500909742171877</TimeTagModified-SourceItem23--1>
@@ -2632,6 +2707,7 @@ DIO
       <SourceItem23-BuildingTarget-2>True</SourceItem23-BuildingTarget-2>
       <SourceItem23-IndividualCompileOption-2>False</SourceItem23-IndividualCompileOption-2>
       <TimeTagModified-SourceItem24--0>-8588500909401367800</TimeTagModified-SourceItem24--0>
+      <SourceItem24-IsLockedByUser>False</SourceItem24-IsLockedByUser>
       <SourceItem24-BuildingTarget-0>True</SourceItem24-BuildingTarget-0>
       <SourceItem24-IndividualCompileOption-0>False</SourceItem24-IndividualCompileOption-0>
       <TimeTagModified-SourceItem24--1>-8588500909401367800</TimeTagModified-SourceItem24--1>
@@ -2641,6 +2717,7 @@ DIO
       <SourceItem24-BuildingTarget-2>True</SourceItem24-BuildingTarget-2>
       <SourceItem24-IndividualCompileOption-2>False</SourceItem24-IndividualCompileOption-2>
       <TimeTagModified-SourceItem25--0>-8588500908856863355</TimeTagModified-SourceItem25--0>
+      <SourceItem25-IsLockedByUser>False</SourceItem25-IsLockedByUser>
       <SourceItem25-BuildingTarget-0>True</SourceItem25-BuildingTarget-0>
       <SourceItem25-IndividualCompileOption-0>False</SourceItem25-IndividualCompileOption-0>
       <TimeTagModified-SourceItem25--1>-8588500908856863355</TimeTagModified-SourceItem25--1>
@@ -2650,6 +2727,7 @@ DIO
       <SourceItem25-BuildingTarget-2>True</SourceItem25-BuildingTarget-2>
       <SourceItem25-IndividualCompileOption-2>False</SourceItem25-IndividualCompileOption-2>
       <TimeTagModified-SourceItem26--0>-8588500908331480822</TimeTagModified-SourceItem26--0>
+      <SourceItem26-IsLockedByUser>False</SourceItem26-IsLockedByUser>
       <SourceItem26-BuildingTarget-0>True</SourceItem26-BuildingTarget-0>
       <SourceItem26-IndividualCompileOption-0>False</SourceItem26-IndividualCompileOption-0>
       <TimeTagModified-SourceItem26--1>-8588500908331480822</TimeTagModified-SourceItem26--1>
@@ -2659,6 +2737,7 @@ DIO
       <SourceItem26-BuildingTarget-2>True</SourceItem26-BuildingTarget-2>
       <SourceItem26-IndividualCompileOption-2>False</SourceItem26-IndividualCompileOption-2>
       <TimeTagModified-SourceItem27--0>-8588394923628028783</TimeTagModified-SourceItem27--0>
+      <SourceItem27-IsLockedByUser>False</SourceItem27-IsLockedByUser>
       <SourceItem27-BuildingTarget-0>True</SourceItem27-BuildingTarget-0>
       <SourceItem27-IndividualCompileOption-0>False</SourceItem27-IndividualCompileOption-0>
       <TimeTagModified-SourceItem27--1>-8588394923628028783</TimeTagModified-SourceItem27--1>
@@ -2668,6 +2747,7 @@ DIO
       <SourceItem27-BuildingTarget-2>True</SourceItem27-BuildingTarget-2>
       <SourceItem27-IndividualCompileOption-2>False</SourceItem27-IndividualCompileOption-2>
       <TimeTagModified-SourceItem28--0>-8588274879274124911</TimeTagModified-SourceItem28--0>
+      <SourceItem28-IsLockedByUser>False</SourceItem28-IsLockedByUser>
       <SourceItem28-BuildingTarget-0>True</SourceItem28-BuildingTarget-0>
       <SourceItem28-IndividualCompileOption-0>False</SourceItem28-IndividualCompileOption-0>
       <TimeTagModified-SourceItem28--1>-8588274879274124911</TimeTagModified-SourceItem28--1>
@@ -2677,6 +2757,7 @@ DIO
       <SourceItem28-BuildingTarget-2>True</SourceItem28-BuildingTarget-2>
       <SourceItem28-IndividualCompileOption-2>False</SourceItem28-IndividualCompileOption-2>
       <TimeTagModified-SourceItem29--0>-8588056832914194818</TimeTagModified-SourceItem29--0>
+      <SourceItem29-IsLockedByUser>False</SourceItem29-IsLockedByUser>
       <SourceItem29-BuildingTarget-0>True</SourceItem29-BuildingTarget-0>
       <SourceItem29-IndividualCompileOption-0>False</SourceItem29-IndividualCompileOption-0>
       <TimeTagModified-SourceItem29--1>-8588056832914194818</TimeTagModified-SourceItem29--1>
@@ -2686,6 +2767,7 @@ DIO
       <SourceItem29-BuildingTarget-2>True</SourceItem29-BuildingTarget-2>
       <SourceItem29-IndividualCompileOption-2>False</SourceItem29-IndividualCompileOption-2>
       <TimeTagModified-SourceItem30--0>-8588507911017925475</TimeTagModified-SourceItem30--0>
+      <SourceItem30-IsLockedByUser>False</SourceItem30-IsLockedByUser>
       <SourceItem30-BuildingTarget-0>True</SourceItem30-BuildingTarget-0>
       <SourceItem30-IndividualCompileOption-0>False</SourceItem30-IndividualCompileOption-0>
       <TimeTagModified-SourceItem30--1>-8588507911017925475</TimeTagModified-SourceItem30--1>
@@ -2695,6 +2777,7 @@ DIO
       <SourceItem30-BuildingTarget-2>True</SourceItem30-BuildingTarget-2>
       <SourceItem30-IndividualCompileOption-2>False</SourceItem30-IndividualCompileOption-2>
       <TimeTagModified-SourceItem31--0>-8588507772649258140</TimeTagModified-SourceItem31--0>
+      <SourceItem31-IsLockedByUser>False</SourceItem31-IsLockedByUser>
       <SourceItem31-BuildingTarget-0>True</SourceItem31-BuildingTarget-0>
       <SourceItem31-IndividualCompileOption-0>False</SourceItem31-IndividualCompileOption-0>
       <TimeTagModified-SourceItem31--1>-8588507772649258140</TimeTagModified-SourceItem31--1>
@@ -2704,6 +2787,7 @@ DIO
       <SourceItem31-BuildingTarget-2>True</SourceItem31-BuildingTarget-2>
       <SourceItem31-IndividualCompileOption-2>False</SourceItem31-IndividualCompileOption-2>
       <TimeTagModified-SourceItem32--0>-8588507771834056998</TimeTagModified-SourceItem32--0>
+      <SourceItem32-IsLockedByUser>False</SourceItem32-IsLockedByUser>
       <SourceItem32-BuildingTarget-0>True</SourceItem32-BuildingTarget-0>
       <SourceItem32-IndividualCompileOption-0>False</SourceItem32-IndividualCompileOption-0>
       <TimeTagModified-SourceItem32--1>-8588507771834056998</TimeTagModified-SourceItem32--1>
@@ -2713,6 +2797,7 @@ DIO
       <SourceItem32-BuildingTarget-2>True</SourceItem32-BuildingTarget-2>
       <SourceItem32-IndividualCompileOption-2>False</SourceItem32-IndividualCompileOption-2>
       <TimeTagModified-SourceItem33--0>-8588507770371054950</TimeTagModified-SourceItem33--0>
+      <SourceItem33-IsLockedByUser>False</SourceItem33-IsLockedByUser>
       <SourceItem33-BuildingTarget-0>True</SourceItem33-BuildingTarget-0>
       <SourceItem33-IndividualCompileOption-0>False</SourceItem33-IndividualCompileOption-0>
       <TimeTagModified-SourceItem33--1>-8588507770371054950</TimeTagModified-SourceItem33--1>
@@ -2722,6 +2807,7 @@ DIO
       <SourceItem33-BuildingTarget-2>True</SourceItem33-BuildingTarget-2>
       <SourceItem33-IndividualCompileOption-2>False</SourceItem33-IndividualCompileOption-2>
       <TimeTagModified-SourceItem34--0>-8588507769940054347</TimeTagModified-SourceItem34--0>
+      <SourceItem34-IsLockedByUser>False</SourceItem34-IsLockedByUser>
       <SourceItem34-BuildingTarget-0>True</SourceItem34-BuildingTarget-0>
       <SourceItem34-IndividualCompileOption-0>False</SourceItem34-IndividualCompileOption-0>
       <TimeTagModified-SourceItem34--1>-8588507769940054347</TimeTagModified-SourceItem34--1>
@@ -2731,6 +2817,7 @@ DIO
       <SourceItem34-BuildingTarget-2>True</SourceItem34-BuildingTarget-2>
       <SourceItem34-IndividualCompileOption-2>False</SourceItem34-IndividualCompileOption-2>
       <TimeTagModified-SourceItem35--0>-8588507930616516008</TimeTagModified-SourceItem35--0>
+      <SourceItem35-IsLockedByUser>False</SourceItem35-IsLockedByUser>
       <SourceItem35-BuildingTarget-0>True</SourceItem35-BuildingTarget-0>
       <SourceItem35-IndividualCompileOption-0>False</SourceItem35-IndividualCompileOption-0>
       <TimeTagModified-SourceItem35--1>-8588507930616516008</TimeTagModified-SourceItem35--1>
@@ -2740,6 +2827,7 @@ DIO
       <SourceItem35-BuildingTarget-2>True</SourceItem35-BuildingTarget-2>
       <SourceItem35-IndividualCompileOption-2>False</SourceItem35-IndividualCompileOption-2>
       <TimeTagModified-SourceItem36--0>-8588507929963915094</TimeTagModified-SourceItem36--0>
+      <SourceItem36-IsLockedByUser>False</SourceItem36-IsLockedByUser>
       <SourceItem36-BuildingTarget-0>True</SourceItem36-BuildingTarget-0>
       <SourceItem36-IndividualCompileOption-0>False</SourceItem36-IndividualCompileOption-0>
       <TimeTagModified-SourceItem36--1>-8588507929963915094</TimeTagModified-SourceItem36--1>
@@ -2749,6 +2837,7 @@ DIO
       <SourceItem36-BuildingTarget-2>True</SourceItem36-BuildingTarget-2>
       <SourceItem36-IndividualCompileOption-2>False</SourceItem36-IndividualCompileOption-2>
       <TimeTagModified-SourceItem37--0>-8588284970718361711</TimeTagModified-SourceItem37--0>
+      <SourceItem37-IsLockedByUser>False</SourceItem37-IsLockedByUser>
       <SourceItem37-BuildingTarget-0>True</SourceItem37-BuildingTarget-0>
       <SourceItem37-IndividualCompileOption-0>False</SourceItem37-IndividualCompileOption-0>
       <TimeTagModified-SourceItem37--1>-8588284970718361711</TimeTagModified-SourceItem37--1>
@@ -2758,6 +2847,7 @@ DIO
       <SourceItem37-BuildingTarget-2>True</SourceItem37-BuildingTarget-2>
       <SourceItem37-IndividualCompileOption-2>False</SourceItem37-IndividualCompileOption-2>
       <TimeTagModified-SourceItem38--0>-8588284970718361711</TimeTagModified-SourceItem38--0>
+      <SourceItem38-IsLockedByUser>False</SourceItem38-IsLockedByUser>
       <SourceItem38-BuildingTarget-0>True</SourceItem38-BuildingTarget-0>
       <SourceItem38-IndividualCompileOption-0>False</SourceItem38-IndividualCompileOption-0>
       <TimeTagModified-SourceItem38--1>-8588284970718361711</TimeTagModified-SourceItem38--1>
@@ -2767,6 +2857,7 @@ DIO
       <SourceItem38-BuildingTarget-2>True</SourceItem38-BuildingTarget-2>
       <SourceItem38-IndividualCompileOption-2>False</SourceItem38-IndividualCompileOption-2>
       <TimeTagModified-SourceItem39--0>-8588260879242241263</TimeTagModified-SourceItem39--0>
+      <SourceItem39-IsLockedByUser>False</SourceItem39-IsLockedByUser>
       <SourceItem39-BuildingTarget-0>True</SourceItem39-BuildingTarget-0>
       <SourceItem39-IndividualCompileOption-0>False</SourceItem39-IndividualCompileOption-0>
       <TimeTagModified-SourceItem39--1>-8588260879242241263</TimeTagModified-SourceItem39--1>
@@ -2776,6 +2867,7 @@ DIO
       <SourceItem39-BuildingTarget-2>True</SourceItem39-BuildingTarget-2>
       <SourceItem39-IndividualCompileOption-2>False</SourceItem39-IndividualCompileOption-2>
       <TimeTagModified-SourceItem40--0>-8588260879242191260</TimeTagModified-SourceItem40--0>
+      <SourceItem40-IsLockedByUser>False</SourceItem40-IsLockedByUser>
       <SourceItem40-BuildingTarget-0>True</SourceItem40-BuildingTarget-0>
       <SourceItem40-IndividualCompileOption-0>False</SourceItem40-IndividualCompileOption-0>
       <TimeTagModified-SourceItem40--1>-8588260879242191260</TimeTagModified-SourceItem40--1>
@@ -2784,9 +2876,20 @@ DIO
       <TimeTagModified-SourceItem40--2>-8588260879242191260</TimeTagModified-SourceItem40--2>
       <SourceItem40-BuildingTarget-2>True</SourceItem40-BuildingTarget-2>
       <SourceItem40-IndividualCompileOption-2>False</SourceItem40-IndividualCompileOption-2>
+      <TimeTagModified-SourceItem41--0>-8586784033851455742</TimeTagModified-SourceItem41--0>
+      <SourceItem41-IsLockedByUser>False</SourceItem41-IsLockedByUser>
+      <SourceItem41-BuildingTarget-0>True</SourceItem41-BuildingTarget-0>
+      <SourceItem41-IndividualCompileOption-0>False</SourceItem41-IndividualCompileOption-0>
+      <TimeTagModified-SourceItem41--1>-8586784033851455742</TimeTagModified-SourceItem41--1>
+      <SourceItem41-BuildingTarget-1>True</SourceItem41-BuildingTarget-1>
+      <SourceItem41-IndividualCompileOption-1>False</SourceItem41-IndividualCompileOption-1>
+      <TimeTagModified-SourceItem41--2>-8586784033851455742</TimeTagModified-SourceItem41--2>
+      <SourceItem41-BuildingTarget-2>True</SourceItem41-BuildingTarget-2>
+      <SourceItem41-IndividualCompileOption-2>False</SourceItem41-IndividualCompileOption-2>
     </Instance>
     <Instance Guid="0d0f149a-1fe7-4bf0-80ed-6bb1bc93c593">
       <TimeTagModified-SourceItem7--0>-8588529555936463208</TimeTagModified-SourceItem7--0>
+      <SourceItem7-IsLockedByUser>False</SourceItem7-IsLockedByUser>
       <SourceItem7-BuildingTarget-0>True</SourceItem7-BuildingTarget-0>
       <SourceItem7-IndividualAssembleOption-0>False</SourceItem7-IndividualAssembleOption-0>
       <TimeTagModified-SourceItem7--1>-8588529555936463208</TimeTagModified-SourceItem7--1>
@@ -2796,6 +2899,7 @@ DIO
       <SourceItem7-BuildingTarget-2>True</SourceItem7-BuildingTarget-2>
       <SourceItem7-IndividualAssembleOption-2>True</SourceItem7-IndividualAssembleOption-2>
       <TimeTagModified-SourceItem8--0>-8588529555937563210</TimeTagModified-SourceItem8--0>
+      <SourceItem8-IsLockedByUser>False</SourceItem8-IsLockedByUser>
       <SourceItem8-BuildingTarget-0>True</SourceItem8-BuildingTarget-0>
       <SourceItem8-IndividualAssembleOption-0>False</SourceItem8-IndividualAssembleOption-0>
       <TimeTagModified-SourceItem8--1>-8588529555937563210</TimeTagModified-SourceItem8--1>
@@ -3045,6 +3149,8 @@ DIO
       <DebuggerProperty-HookProperty-HookTransaction-Disconnecting-Length>0</DebuggerProperty-HookProperty-HookTransaction-Disconnecting-Length>
     </Instance>
     <Instance Guid="e60aa42b-95c8-4370-9988-346db33ee608">
+      <DeviceChangedCounter>0</DeviceChangedCounter>
+      <DeviceName>uPD70F3376</DeviceName>
       <DebuggerProperty-EssentialProperty-IOR-UseProgrammableIor>True</DebuggerProperty-EssentialProperty-IOR-UseProgrammableIor>
       <DebuggerProperty-EssentialProperty-IOR-ProgrammableIorAddress>67026944</DebuggerProperty-EssentialProperty-IOR-ProgrammableIorAddress>
       <DebuggerProperty-EssentialProperty-DataFlash-UseDataFlash>False</DebuggerProperty-EssentialProperty-DataFlash-UseDataFlash>
@@ -3076,6 +3182,7 @@ DIO
       <DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-UsePicPidOffset>False</DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-UsePicPidOffset>
       <DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-PicOffset>0</DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-PicOffset>
       <DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-PidOffset>0</DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-PidOffset>
+      <DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-GenerateInformationForInputCompletion>True</DebuggerProperty-DownloadProperty-DebugInformation-DownloadFiles-DownloadItem0-GenerateInformationForInputCompletion>
       <DebuggerProperty-DownloadProperty-DebugInformation-CpuReset>True</DebuggerProperty-DownloadProperty-DebugInformation-CpuReset>
       <DebuggerProperty-DownloadProperty-DebugInformation-FlashErase>False</DebuggerProperty-DownloadProperty-DebugInformation-FlashErase>
       <DebuggerProperty-DownloadProperty-DebugInformation-EventCorrection>SuspendEvent</DebuggerProperty-DownloadProperty-DebugInformation-EventCorrection>
@@ -3083,6 +3190,7 @@ DIO
       <DebuggerProperty-DownloadProperty-DebugInformation-MainSymbol>XwBtAGEAaQBuAA==</DebuggerProperty-DownloadProperty-DebugInformation-MainSymbol>
       <DebuggerProperty-DownloadProperty-DebugInformation-StartupStartSymbol>XwBfAHMAdABhAHIAdAA=</DebuggerProperty-DownloadProperty-DebugInformation-StartupStartSymbol>
       <DebuggerProperty-DownloadProperty-DebugInformation-StartupEndSymbol>XwBfAHMAdABhAHIAdABlAG4AZAA=</DebuggerProperty-DownloadProperty-DebugInformation-StartupEndSymbol>
+      <DebuggerProperty-DownloadProperty-Download-DownloadMode>SpeedPriority</DebuggerProperty-DownloadProperty-Download-DownloadMode>
       <DebuggerProperty-OptionalProperty-AccessMemory-UpdateDisplayInExecution>Yes</DebuggerProperty-OptionalProperty-AccessMemory-UpdateDisplayInExecution>
       <DebuggerProperty-OptionalProperty-AccessMemory-UpdateInterval>500</DebuggerProperty-OptionalProperty-AccessMemory-UpdateInterval>
       <DebuggerProperty-OptionalProperty-Register-ClearRegisterWhenReset>No</DebuggerProperty-OptionalProperty-Register-ClearRegisterWhenReset>
@@ -3135,12 +3243,7 @@ DIO
       <DebuggerProperty-OptionalProperty-PinMask-WaitMask>No</DebuggerProperty-OptionalProperty-PinMask-WaitMask>
       <DebuggerProperty-OptionalProperty-Break-OpenBreak>No</DebuggerProperty-OptionalProperty-Break-OpenBreak>
       <DebuggerProperty-OptionalProperty-AccessMemory-HaltCancel>Yes</DebuggerProperty-OptionalProperty-AccessMemory-HaltCancel>
-      <DebuggerProperty-OptionalProperty-ExternalFlashMemory-Use>No</DebuggerProperty-OptionalProperty-ExternalFlashMemory-Use>
-      <DebuggerProperty-OptionalProperty-ExternalFlashMemory-StartAddress>0</DebuggerProperty-OptionalProperty-ExternalFlashMemory-StartAddress>
-      <DebuggerProperty-OptionalProperty-ExternalFlashMemory-FileName />
-      <DebuggerProperty-OptionalProperty-ExternalFlashMemory-DataSize>8</DebuggerProperty-OptionalProperty-ExternalFlashMemory-DataSize>
-      <DebuggerProperty-OptionalProperty-ExternalFlashMemory-ParallelSize>1</DebuggerProperty-OptionalProperty-ExternalFlashMemory-ParallelSize>
-      <DebuggerProperty-OptionalProperty-ExternalFlashMemory-SerialSize>1</DebuggerProperty-OptionalProperty-ExternalFlashMemory-SerialSize>
+      <DebuggerProperty-OptionalProperty-ExternalFlashMemory-ExternalFlashMemoryFiles-Length>0</DebuggerProperty-OptionalProperty-ExternalFlashMemory-ExternalFlashMemoryFiles-Length>
       <DebuggerProperty-OptionalProperty-PinMask-DbintMask>No</DebuggerProperty-OptionalProperty-PinMask-DbintMask>
       <DebuggerProperty-HookProperty-HookTransaction-Downloading-Length>0</DebuggerProperty-HookProperty-HookTransaction-Downloading-Length>
       <DebuggerProperty-HookProperty-HookTransaction-Downloaded-Length>0</DebuggerProperty-HookProperty-HookTransaction-Downloaded-Length>
@@ -3158,58 +3261,134 @@ DIO
   </Class>
   <Class Guid="7d577131-4ec1-4e88-968d-89381f6c178a">
     <Instance Guid="7d577131-4ec1-4e88-968d-89381f6c178a">
-      <FormatVersion>1.0</FormatVersion>
+      <FormatVersion>1.1</FormatVersion>
     </Instance>
     <Instance Guid="ccb786f6-b5fc-409c-93bf-105835d48f8f">
       <AccumulateResultOfAnalysis>False</AccumulateResultOfAnalysis>
       <CompulsorilyOutputCrossReferenceFile>False</CompulsorilyOutputCrossReferenceFile>
+      <CompulsorilyEnableDebugToolFunctions>False</CompulsorilyEnableDebugToolFunctions>
       <IncludePrototypeDeclaration>True</IncludePrototypeDeclaration>
       <RefreshAtProgramStop>Yes</RefreshAtProgramStop>
       <UnitOfTime>Nanosecond</UnitOfTime>
       <DelimitsArgumentsByNewLine>False</DelimitsArgumentsByNewLine>
       <DisplayRegisterForVariableList>False</DisplayRegisterForVariableList>
       <DisplayFunctionWithoutDefinition>False</DisplayFunctionWithoutDefinition>
-      <ForceOutputFuncionInformation>False</ForceOutputFuncionInformation>
+      <ForceOutputFunctionInformation>False</ForceOutputFunctionInformation>
+      <FreeMemoryWhenAllPanelClose>False</FreeMemoryWhenAllPanelClose>
+      <AskWhetherCancelTheResultByOutOfMemory>True</AskWhetherCancelTheResultByOutOfMemory>
+      <AnalyzeFilesSelectionType>FilesNotToAnalyze</AnalyzeFilesSelectionType>
+      <AnalyzeNotTargetFilesCount>0</AnalyzeNotTargetFilesCount>
+      <TraceAnalysisTargetPE>All</TraceAnalysisTargetPE>
       <ImportFilesCount>0</ImportFilesCount>
       <IsExportAutomatically>False</IsExportAutomatically>
       <ExportFunctionFileName>%ProjectName%.mtfl</ExportFunctionFileName>
       <ExportVariableFileName>%ProjectName%.mtvl</ExportVariableFileName>
-      <SettingsUpperLowerBoundOfTheRangeOfView1>False</SettingsUpperLowerBoundOfTheRangeOfView1>
-      <SettingsUpperLowerBoundOfTheRangeOfView2>False</SettingsUpperLowerBoundOfTheRangeOfView2>
-      <SettingsUpperLowerBoundOfTheRangeOfView3>False</SettingsUpperLowerBoundOfTheRangeOfView3>
-      <SettingsUpperLowerBoundOfTheRangeOfView4>False</SettingsUpperLowerBoundOfTheRangeOfView4>
-      <UpperBoundOfTheRangeOfView1>2147483647</UpperBoundOfTheRangeOfView1>
-      <UpperBoundOfTheRangeOfView2>2147483647</UpperBoundOfTheRangeOfView2>
-      <UpperBoundOfTheRangeOfView3>2147483647</UpperBoundOfTheRangeOfView3>
-      <UpperBoundOfTheRangeOfView4>2147483647</UpperBoundOfTheRangeOfView4>
-      <LowerBoundOfTheRangeOfView1>-2147483648</LowerBoundOfTheRangeOfView1>
-      <LowerBoundOfTheRangeOfView2>-2147483648</LowerBoundOfTheRangeOfView2>
-      <LowerBoundOfTheRangeOfView3>-2147483648</LowerBoundOfTheRangeOfView3>
-      <LowerBoundOfTheRangeOfView4>-2147483648</LowerBoundOfTheRangeOfView4>
-      <SettingsUpperLowerBoundOfTheRangeOfValidValue1>False</SettingsUpperLowerBoundOfTheRangeOfValidValue1>
-      <SettingsUpperLowerBoundOfTheRangeOfValidValue2>False</SettingsUpperLowerBoundOfTheRangeOfValidValue2>
-      <SettingsUpperLowerBoundOfTheRangeOfValidValue3>False</SettingsUpperLowerBoundOfTheRangeOfValidValue3>
-      <SettingsUpperLowerBoundOfTheRangeOfValidValue4>False</SettingsUpperLowerBoundOfTheRangeOfValidValue4>
-      <UpperBoundOfTheRangeOfValidValue1>2147483647</UpperBoundOfTheRangeOfValidValue1>
-      <UpperBoundOfTheRangeOfValidValue2>2147483647</UpperBoundOfTheRangeOfValidValue2>
-      <UpperBoundOfTheRangeOfValidValue3>2147483647</UpperBoundOfTheRangeOfValidValue3>
-      <UpperBoundOfTheRangeOfValidValue4>2147483647</UpperBoundOfTheRangeOfValidValue4>
-      <LowerBoundOfTheRangeOfValidValue1>-2147483648</LowerBoundOfTheRangeOfValidValue1>
-      <LowerBoundOfTheRangeOfValidValue2>-2147483648</LowerBoundOfTheRangeOfValidValue2>
-      <LowerBoundOfTheRangeOfValidValue3>-2147483648</LowerBoundOfTheRangeOfValidValue3>
-      <LowerBoundOfTheRangeOfValidValue4>-2147483648</LowerBoundOfTheRangeOfValidValue4>
-      <DisplayTheLegend1>True</DisplayTheLegend1>
-      <DisplayTheLegend2>True</DisplayTheLegend2>
-      <DisplayTheLegend3>True</DisplayTheLegend3>
-      <DisplayTheLegend4>True</DisplayTheLegend4>
-      <LocationOfTheLegend1>LeftSide</LocationOfTheLegend1>
-      <LocationOfTheLegend2>LeftSide</LocationOfTheLegend2>
-      <LocationOfTheLegend3>LeftSide</LocationOfTheLegend3>
-      <LocationOfTheLegend4>LeftSide</LocationOfTheLegend4>
-      <NumberOfFunctionDisplayingInExecutionTimeChart1>10</NumberOfFunctionDisplayingInExecutionTimeChart1>
-      <NumberOfFunctionDisplayingInExecutionTimeChart2>10</NumberOfFunctionDisplayingInExecutionTimeChart2>
-      <NumberOfFunctionDisplayingInExecutionTimeChart3>10</NumberOfFunctionDisplayingInExecutionTimeChart3>
-      <NumberOfFunctionDisplayingInExecutionTimeChart4>10</NumberOfFunctionDisplayingInExecutionTimeChart4>
+      <NumberOfFunctionDisplayingInExecutionTimeChart>10</NumberOfFunctionDisplayingInExecutionTimeChart>
+    </Instance>
+    <Instance Guid="4c245ffc-f465-4fbf-8655-108a8a1468e0">
+      <AnalysisMethod>RealtimeSampling</AnalysisMethod>
+      <AnalysisChartDataFileName />
+      <StartStopRealTimeSampling>Synchronized</StartStopRealTimeSampling>
+      <AutoAdjustForValueAndTime>None</AutoAdjustForValueAndTime>
+      <AutoAdjustNumberOfPoints>20</AutoAdjustNumberOfPoints>
+      <TimePerGrid>1000000</TimePerGrid>
+      <ChartType>LineChart</ChartType>
+      <SpecifyForegroundColorAndBackgroundColor>False</SpecifyForegroundColorAndBackgroundColor>
+      <CursorAColor>PaleGreen</CursorAColor>
+      <CursorBColor>PaleTurquoise</CursorBColor>
+      <Zoom1Color>40ff0a4f</Zoom1Color>
+      <Zoom2Color>405be416</Zoom2Color>
+      <Zoom3Color>40056def</Zoom3Color>
+      <Zoom4Color>40ff541c</Zoom4Color>
+      <UseTriggerFunction>False</UseTriggerFunction>
+      <TriggerMode>Auto</TriggerMode>
+      <TriggerSource>Channel01</TriggerSource>
+      <TriggerLevel>0</TriggerLevel>
+      <TriggerEdgeDirection>Rising</TriggerEdgeDirection>
+      <TriggerPosition>0</TriggerPosition>
+      <TriggerMarkColor>Orange</TriggerMarkColor>
+      <SamplingInterval>10</SamplingInterval>
+      <DataCollectionChannel>None</DataCollectionChannel>
+      <ChannelVariableName1 />
+      <ChannelVariableName2 />
+      <ChannelVariableName3 />
+      <ChannelVariableName4 />
+      <ChannelVariableName5 />
+      <ChannelVariableName6 />
+      <ChannelVariableName7 />
+      <ChannelVariableName8 />
+      <ChannelVariableName9 />
+      <ChannelVariableName10 />
+      <ChannelVariableName11 />
+      <ChannelVariableName12 />
+      <ChannelVariableName13 />
+      <ChannelVariableName14 />
+      <ChannelVariableName15 />
+      <ChannelVariableName16 />
+      <ChannelVariableType1>Auto</ChannelVariableType1>
+      <ChannelVariableType2>Auto</ChannelVariableType2>
+      <ChannelVariableType3>Auto</ChannelVariableType3>
+      <ChannelVariableType4>Auto</ChannelVariableType4>
+      <ChannelVariableType5>Auto</ChannelVariableType5>
+      <ChannelVariableType6>Auto</ChannelVariableType6>
+      <ChannelVariableType7>Auto</ChannelVariableType7>
+      <ChannelVariableType8>Auto</ChannelVariableType8>
+      <ChannelVariableType9>Auto</ChannelVariableType9>
+      <ChannelVariableType10>Auto</ChannelVariableType10>
+      <ChannelVariableType11>Auto</ChannelVariableType11>
+      <ChannelVariableType12>Auto</ChannelVariableType12>
+      <ChannelVariableType13>Auto</ChannelVariableType13>
+      <ChannelVariableType14>Auto</ChannelVariableType14>
+      <ChannelVariableType15>Auto</ChannelVariableType15>
+      <ChannelVariableType16>Auto</ChannelVariableType16>
+      <ChannelValuePerGrid1>25.5</ChannelValuePerGrid1>
+      <ChannelValuePerGrid2>25.5</ChannelValuePerGrid2>
+      <ChannelValuePerGrid3>25.5</ChannelValuePerGrid3>
+      <ChannelValuePerGrid4>25.5</ChannelValuePerGrid4>
+      <ChannelValuePerGrid5>25.5</ChannelValuePerGrid5>
+      <ChannelValuePerGrid6>25.5</ChannelValuePerGrid6>
+      <ChannelValuePerGrid7>25.5</ChannelValuePerGrid7>
+      <ChannelValuePerGrid8>25.5</ChannelValuePerGrid8>
+      <ChannelValuePerGrid9>25.5</ChannelValuePerGrid9>
+      <ChannelValuePerGrid10>25.5</ChannelValuePerGrid10>
+      <ChannelValuePerGrid11>25.5</ChannelValuePerGrid11>
+      <ChannelValuePerGrid12>25.5</ChannelValuePerGrid12>
+      <ChannelValuePerGrid13>25.5</ChannelValuePerGrid13>
+      <ChannelValuePerGrid14>25.5</ChannelValuePerGrid14>
+      <ChannelValuePerGrid15>25.5</ChannelValuePerGrid15>
+      <ChannelValuePerGrid16>25.5</ChannelValuePerGrid16>
+      <ChannelValueOffset1>0</ChannelValueOffset1>
+      <ChannelValueOffset2>0</ChannelValueOffset2>
+      <ChannelValueOffset3>0</ChannelValueOffset3>
+      <ChannelValueOffset4>0</ChannelValueOffset4>
+      <ChannelValueOffset5>0</ChannelValueOffset5>
+      <ChannelValueOffset6>0</ChannelValueOffset6>
+      <ChannelValueOffset7>0</ChannelValueOffset7>
+      <ChannelValueOffset8>0</ChannelValueOffset8>
+      <ChannelValueOffset9>0</ChannelValueOffset9>
+      <ChannelValueOffset10>0</ChannelValueOffset10>
+      <ChannelValueOffset11>0</ChannelValueOffset11>
+      <ChannelValueOffset12>0</ChannelValueOffset12>
+      <ChannelValueOffset13>0</ChannelValueOffset13>
+      <ChannelValueOffset14>0</ChannelValueOffset14>
+      <ChannelValueOffset15>0</ChannelValueOffset15>
+      <ChannelValueOffset16>0</ChannelValueOffset16>
+      <ChannelColor1>c0ff0a4f</ChannelColor1>
+      <ChannelColor2>c05be416</ChannelColor2>
+      <ChannelColor3>c0056dff</ChannelColor3>
+      <ChannelColor4>c0ff541c</ChannelColor4>
+      <ChannelColor5>c04fc1ff</ChannelColor5>
+      <ChannelColor6>c0a932ff</ChannelColor6>
+      <ChannelColor7>c0ffd91c</ChannelColor7>
+      <ChannelColor8>c0ff30a5</ChannelColor8>
+      <ChannelColor9>c0bee02f</ChannelColor9>
+      <ChannelColor10>c05510ff</ChannelColor10>
+      <ChannelColor11>c0ff97e4</ChannelColor11>
+      <ChannelColor12>c0913a37</ChannelColor12>
+      <ChannelColor13>c0c68e15</ChannelColor13>
+      <ChannelColor14>c0317f0c</ChannelColor14>
+      <ChannelColor15>c060493e</ChannelColor15>
+      <ChannelColor16>c072808e</ChannelColor16>
     </Instance>
   </Class>
   <Class Guid="2a2c2a43-ecdb-4e88-80bd-e75f3e33db90">
