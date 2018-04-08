@@ -385,6 +385,10 @@ int handling_CAN_cmd(char* sCAN_cmd_Mesg)
 		iResult = handling_CANRead_cmd(sCAN_cmd_Mesg);
 	}
      */
+    else if (strncmp(sCAN_cmd_Mesg, "CAN CONFIG", 10) == 0)
+    {
+        iResult = handling_CANConfig_cmd(sCAN_cmd_Mesg);
+    }
 	else
 	{
 		g_iErrorCodeNo = -44;
