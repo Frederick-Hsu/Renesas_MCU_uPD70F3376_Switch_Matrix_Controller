@@ -1,3 +1,4 @@
+
 	/********************************************************************************************************************************************************
 	 *
 	 * Project	: Switch_Matrix_Controller
@@ -192,7 +193,14 @@
 			
 			CAN catalog :
 			
-				CAN 
+				CAN SET
+					$CAN SET:0x0056 0x6F7D54AB950CF48E!
+				
+				CAN GET
+					$CAN GET:0x123456 0x6F7D54AB950CF48E!
+                
+                CAN CONFIG
+                    $CAN CONFIG:BAUD 500kbps!
 
 		SYSTem :
 			Error catalog :
@@ -202,13 +210,3 @@
 				===> Response : $SYSTem:Hello, this is MCTBox. Welcome to call me!
 				$SYSTem:VERsion?!
 				===> Response : $SYSTem:Version: V0.01.1    Build date: 2012-07-27!
-
-
-
-
-
-
-
-
-
-
