@@ -9,7 +9,7 @@
 
 #ifndef CAN_CONTROL_H
 #define CAN_CONTROL_H
-
+    
     int Set_CAN_BaudRate(char sBaudRateInfo[]);
 
 #endif  /* CAN_CONTROL_H */
