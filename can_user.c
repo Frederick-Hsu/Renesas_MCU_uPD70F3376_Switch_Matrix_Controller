@@ -38,6 +38,11 @@
 /* Start user code for include definition. Do not edit comment generated here */
 /* End user code for include definition. Do not edit comment generated here */
 #include "user_define.h"
+#include "CAN/CAN_Control.h"
+#include "CAN/CAN_Telegrams.h"
+
+#include <stdio.h>
+#include <stdlib.h>
 
 /*
 *******************************************************************************
@@ -102,6 +107,9 @@ __interrupt void MD_INTC0TRX(void)
 **
 **-----------------------------------------------------------------------------
 */
+
+CanTelegramQueue_t canTelegramQueue = {NULL, NULL, 0};
+
 __interrupt void MD_INTC0REC(void)
 {
 	/* Start user code. Do not edit comment generated here */
@@ -121,8 +129,17 @@ __interrupt void MD_INTC0REC(void)
         sprintf(mesg, "%02X", candata[index]);
         strcat(canMesg, mesg);
     }
-    sprintf(canTelegram, "$CAN GET:0x%04X 0x%s!", canid, canMesg);
-    UARTD2_SendData(canTelegram, strlen(canTelegram));
+    
+    if (Retrieve_CAN_ReceiveMode() == IMMEDIATE)
+    {
+        sprintf(canTelegram, "$CAN GET:0x%04X 0x%s!", canid, canMesg);
+        UARTD2_SendData(canTelegram, strlen(canTelegram));
+    }
+    else if (Retrieve_CAN_ReceiveMode() == CACHE)
+    {
+        sprintf(canTelegram, "$CAN GET:0x%04X 0x%s!", canid, canMesg);
+        EnTelegramQueue(&canTelegramQueue, canTelegram);
+    }
 	/* End user code. Do not edit comment generated here */
 }
 

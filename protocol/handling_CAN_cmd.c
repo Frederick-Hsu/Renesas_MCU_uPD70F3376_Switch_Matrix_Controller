@@ -89,7 +89,18 @@ int Parse_CAN_Data(char sRawCanData[], unsigned char *sParsedCanData)
 int handling_CANRead_cmd(char *sARGIN_CanReadMesg)
 {
 	int iError = 0;
-	
+	unsigned int uiLen = strlen(sARGIN_CanReadMesg),
+                 uiPosOfCmdSeparator_Colon = strcspn(sARGIN_CanReadMesg, ":");
+    char sMesg[16] = {0x00};
+    strncpy(sMesg, sARGIN_CanReadMesg+uiPosOfCmdSeparator_Colon+1, uiLen-uiPosOfCmdSeparator_Colon-2);
+    if (strncmp(sMesg, "ALL", 3) == 0)
+    {
+        iError = CAN0_GetAllTelegram();
+    }
+    else if (strncmp(sMesg, "LATEST", 6) == 0)
+    {
+        iError = CAN0_GetLatestTelegram();
+    }
 	return iError;
 }
 
@@ -99,7 +110,7 @@ int handling_CANConfig_cmd(char *sARGIN_CanConfigMesg)
     unsigned int uiPosOfCmdSeparator_Colon = strcspn(sARGIN_CanConfigMesg, ":"),
                  uiLen = strlen(sARGIN_CanConfigMesg),
                  uiPosOfCmdSeparator_Space = 0;
-    char sCanConfigMesg[32] = {0x00}, sCanBaudRate[16] = {0x00};
+    char sCanConfigMesg[32] = {0x00}, sCanBaudRate[16] = {0x00}, sCanMode[16] = {0x00};
     
     if (uiLen == uiPosOfCmdSeparator_Colon)
     {
@@ -107,14 +118,23 @@ int handling_CANConfig_cmd(char *sARGIN_CanConfigMesg)
         return g_iErrorCodeNo;
     }
     strncpy(sCanConfigMesg, sARGIN_CanConfigMesg+uiPosOfCmdSeparator_Colon+1, uiLen-uiPosOfCmdSeparator_Colon-2);
-    if (strncmp(sCanConfigMesg, "BAUD", 4) != 0)
+    if (strncmp(sCanConfigMesg, "BAUD", 4) == 0)
+    {
+        uiPosOfCmdSeparator_Space = strcspn(sCanConfigMesg, " ");
+        strncpy(sCanBaudRate, sCanConfigMesg+uiPosOfCmdSeparator_Space+1, strlen(sCanConfigMesg)-uiPosOfCmdSeparator_Space-1);
+        iError = Set_CAN_BaudRate(sCanBaudRate);
+    }
+    else if (strncmp(sCanConfigMesg, "MODE", 4) == 0)
+    {
+        uiPosOfCmdSeparator_Space = strcspn(sCanConfigMesg, " ");
+        strncpy(sCanMode, sCanConfigMesg+uiPosOfCmdSeparator_Space+1, strlen(sCanConfigMesg)-uiPosOfCmdSeparator_Space-1);
+        iError = Set_CAN_ReceiveMode(sCanMode);
+    }
+    else
     {
         g_iErrorCodeNo = -50;
         return g_iErrorCodeNo;
     }
-    uiPosOfCmdSeparator_Space = strcspn(sCanConfigMesg, " ");
-    strncpy(sCanBaudRate, sCanConfigMesg+uiPosOfCmdSeparator_Space+1, strlen(sCanConfigMesg)-uiPosOfCmdSeparator_Space-1);
-    iError = Set_CAN_BaudRate(sCanBaudRate);
     return iError;
 }
 

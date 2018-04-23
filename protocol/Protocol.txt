@@ -197,10 +197,14 @@
 					$CAN SET:0x0056 0x6F7D54AB950CF48E!
 				
 				CAN GET
-					$CAN GET:0x123456 0x6F7D54AB950CF48E!
+					$CAN GET:0x06FD 0x6F7D54AB950CF48E!
+                    $CAN GET:ALL?
+                    $CAN GET:LATEST?
                 
                 CAN CONFIG
                     $CAN CONFIG:BAUD 500kbps!
+                    $CAN CONFIG:MODE IMMEDIATE!
+                    $CAN CONFIG:MODE CACHE!
 
 		SYSTem :
 			Error catalog :
