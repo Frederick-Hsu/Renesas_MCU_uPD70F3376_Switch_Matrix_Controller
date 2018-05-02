@@ -402,21 +402,29 @@
       <ParentItem>57e76d9f-7f4d-4376-8e1b-a1c400436c96</ParentItem>
       <Property>64d7ec1e-e80f-4050-90e5-06cf0a5d21f2</Property>
     </Instance>
-    <Instance Guid="526a75bc-8330-4b21-b2a1-42f3722ed5af">
-      <Name>CAN_Telegrams.h</Name>
+    <Instance Guid="9f62bf84-ddcd-488e-a2c2-f9e6db3a6a8a">
+      <Name>general.h</Name>
       <Type>File</Type>
-      <RelativePath>CAN\CAN_Telegrams.h</RelativePath>
+      <RelativePath>CAN\general.h</RelativePath>
       <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
       <ParentItem>57e76d9f-7f4d-4376-8e1b-a1c400436c96</ParentItem>
-      <Property>c2a93ea4-a405-4045-8efb-aae099902b21</Property>
+      <Property>ff514c63-3c6f-4b56-b7ef-dec9b0fe38fd</Property>
     </Instance>
-    <Instance Guid="1e492ec2-ad50-46dd-9b60-c0672ef2d083">
-      <Name>CAN_Telegrams.c</Name>
+    <Instance Guid="ff1ceaed-9054-40df-9895-e5b3ca13e390">
+      <Name>can_telegrams_circular_queue.c</Name>
       <Type>File</Type>
-      <RelativePath>CAN\CAN_Telegrams.c</RelativePath>
+      <RelativePath>CAN\can_telegrams_circular_queue.c</RelativePath>
       <TreeImageGuid>941832c1-fc3b-4e1b-94e8-01ea17128b42</TreeImageGuid>
       <ParentItem>57e76d9f-7f4d-4376-8e1b-a1c400436c96</ParentItem>
-      <Property>6c0781e3-3e24-4c2a-8b47-91c536723ed3</Property>
+      <Property>99936889-2c62-4bc8-999c-7f6d1b4806dd</Property>
+    </Instance>
+    <Instance Guid="4a861b11-59ed-4931-8ec1-991eba6ed0b2">
+      <Name>can_telegrams_circular_queue.h</Name>
+      <Type>File</Type>
+      <RelativePath>CAN\can_telegrams_circular_queue.h</RelativePath>
+      <TreeImageGuid>03cad1e8-2eb3-4cde-a8a3-982423631122</TreeImageGuid>
+      <ParentItem>57e76d9f-7f4d-4376-8e1b-a1c400436c96</ParentItem>
+      <Property>4d5ccdee-f0a9-4e8f-b3ff-1aa5026f9554</Property>
     </Instance>
     <Instance Guid="84ddf882-e9d6-4187-aa18-7d49be568e4f">
       <Name>Protocol.txt</Name>
@@ -910,10 +918,13 @@
     <Instance Guid="64d7ec1e-e80f-4050-90e5-06cf0a5d21f2">
       <MemoCount>0</MemoCount>
     </Instance>
-    <Instance Guid="c2a93ea4-a405-4045-8efb-aae099902b21">
+    <Instance Guid="ff514c63-3c6f-4b56-b7ef-dec9b0fe38fd">
       <MemoCount>0</MemoCount>
     </Instance>
-    <Instance Guid="6c0781e3-3e24-4c2a-8b47-91c536723ed3">
+    <Instance Guid="99936889-2c62-4bc8-999c-7f6d1b4806dd">
+      <MemoCount>0</MemoCount>
+    </Instance>
+    <Instance Guid="4d5ccdee-f0a9-4e8f-b3ff-1aa5026f9554">
       <MemoCount>0</MemoCount>
     </Instance>
     <Instance Guid="d749e48f-d4a7-4c8e-a222-aeaa258e7714">
@@ -1175,7 +1186,7 @@
       <SourceItemType20>CSource</SourceItemType20>
       <SourceItemGuid21>c26b9dbe-d45b-4b60-895c-9c470d7aabe9</SourceItemGuid21>
       <SourceItemType21>CSource</SourceItemType21>
-      <SourceItemGuid22>1e492ec2-ad50-46dd-9b60-c0672ef2d083</SourceItemGuid22>
+      <SourceItemGuid22>ff1ceaed-9054-40df-9895-e5b3ca13e390</SourceItemGuid22>
       <SourceItemType22>CSource</SourceItemType22>
       <SourceItemGuid23>a475d376-9976-41fa-8adc-05e5842a3884</SourceItemGuid23>
       <SourceItemType23>CSource</SourceItemType23>
@@ -1733,7 +1744,7 @@ protocol
       <PostLinkCommands-DefaultValue />
       <OtherAdditionalOptions-DefaultValue />
       <IsLockedByUser>False</IsLockedByUser>
-      <TimeTagModified--0>-8588274944229773002</TimeTagModified--0>
+      <TimeTagModified--0>-8586764045398048939</TimeTagModified--0>
       <EntrySymbol-0 />
       <LibraryFiles-0 />
       <OutputFolder-0>%BuildModeName%</OutputFolder-0>
@@ -1767,7 +1778,7 @@ protocol
       <PreLinkCommands-0 />
       <PostLinkCommands-0 />
       <OtherAdditionalOptions-0 />
-      <TimeTagModified--1>-8588274944229773002</TimeTagModified--1>
+      <TimeTagModified--1>-8586764045398048939</TimeTagModified--1>
       <EntrySymbol-1 />
       <LibraryFiles-1 />
       <OutputFolder-1>%BuildModeName%</OutputFolder-1>
@@ -1801,7 +1812,7 @@ protocol
       <PreLinkCommands-1 />
       <PostLinkCommands-1 />
       <OtherAdditionalOptions-1 />
-      <TimeTagModified--2>-8588274944229773002</TimeTagModified--2>
+      <TimeTagModified--2>-8586764045398048939</TimeTagModified--2>
       <EntrySymbol-2 />
       <LibraryFiles-2 />
       <OutputFolder-2>%BuildModeName%</OutputFolder-2>
@@ -2012,21 +2023,21 @@ protocol
       <PostArchiveCommands-DefaultValue />
       <OtherAdditionalOptions-DefaultValue />
       <IsLockedByUser>False</IsLockedByUser>
-      <TimeTagModified--0>-8588274944229773002</TimeTagModified--0>
+      <TimeTagModified--0>-8586764045398048939</TimeTagModified--0>
       <OutputFolder-0>%BuildModeName%</OutputFolder-0>
       <PreArchiveCommands-0 />
       <VerboseMode-0>False</VerboseMode-0>
       <OutputFileName-0>lib%ProjectName%.a</OutputFileName-0>
       <PostArchiveCommands-0 />
       <OtherAdditionalOptions-0 />
-      <TimeTagModified--1>-8588274944229773002</TimeTagModified--1>
+      <TimeTagModified--1>-8586764045398048939</TimeTagModified--1>
       <OutputFolder-1>%BuildModeName%</OutputFolder-1>
       <PreArchiveCommands-1 />
       <VerboseMode-1>False</VerboseMode-1>
       <OutputFileName-1>lib%ProjectName%.a</OutputFileName-1>
       <PostArchiveCommands-1 />
       <OtherAdditionalOptions-1 />
-      <TimeTagModified--2>-8588274944229773002</TimeTagModified--2>
+      <TimeTagModified--2>-8586764045398048939</TimeTagModified--2>
       <OutputFolder-2>%BuildModeName%</OutputFolder-2>
       <PreArchiveCommands-2 />
       <VerboseMode-2>False</VerboseMode-2>
@@ -2510,12 +2521,16 @@ protocol
       <ItemAddTime>636588291276848551</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="526a75bc-8330-4b21-b2a1-42f3722ed5af">
-      <ItemAddTime>636594339015330925</ItemAddTime>
+    <Instance Guid="9f62bf84-ddcd-488e-a2c2-f9e6db3a6a8a">
+      <ItemAddTime>636602864050698389</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
-    <Instance Guid="1e492ec2-ad50-46dd-9b60-c0672ef2d083">
-      <ItemAddTime>636594339315740494</ItemAddTime>
+    <Instance Guid="ff1ceaed-9054-40df-9895-e5b3ca13e390">
+      <ItemAddTime>636608273429409111</ItemAddTime>
+      <ItemAddTimeCount>0</ItemAddTimeCount>
+    </Instance>
+    <Instance Guid="4a861b11-59ed-4931-8ec1-991eba6ed0b2">
+      <ItemAddTime>636608273861448060</ItemAddTime>
       <ItemAddTimeCount>0</ItemAddTimeCount>
     </Instance>
     <Instance Guid="2317529b-91c1-49b6-8351-6d8f51718b0d">
@@ -2718,14 +2733,14 @@ protocol
       <TimeTagModified-SourceItem21--2>-8586784033851455742</TimeTagModified-SourceItem21--2>
       <SourceItem21-BuildingTarget-2>True</SourceItem21-BuildingTarget-2>
       <SourceItem21-IndividualCompileOption-2>False</SourceItem21-IndividualCompileOption-2>
-      <TimeTagModified-SourceItem22--0>-8586777985539035314</TimeTagModified-SourceItem22--0>
+      <TimeTagModified-SourceItem22--0>-8586764051425366697</TimeTagModified-SourceItem22--0>
       <SourceItem22-IsLockedByUser>False</SourceItem22-IsLockedByUser>
       <SourceItem22-BuildingTarget-0>True</SourceItem22-BuildingTarget-0>
       <SourceItem22-IndividualCompileOption-0>False</SourceItem22-IndividualCompileOption-0>
-      <TimeTagModified-SourceItem22--1>-8586777985539035314</TimeTagModified-SourceItem22--1>
+      <TimeTagModified-SourceItem22--1>-8586764051425366697</TimeTagModified-SourceItem22--1>
       <SourceItem22-BuildingTarget-1>True</SourceItem22-BuildingTarget-1>
       <SourceItem22-IndividualCompileOption-1>False</SourceItem22-IndividualCompileOption-1>
-      <TimeTagModified-SourceItem22--2>-8586777985539035314</TimeTagModified-SourceItem22--2>
+      <TimeTagModified-SourceItem22--2>-8586764051425366697</TimeTagModified-SourceItem22--2>
       <SourceItem22-BuildingTarget-2>True</SourceItem22-BuildingTarget-2>
       <SourceItem22-IndividualCompileOption-2>False</SourceItem22-IndividualCompileOption-2>
       <TimeTagModified-SourceItem23--0>-8588500914334722973</TimeTagModified-SourceItem23--0>
