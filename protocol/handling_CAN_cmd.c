@@ -92,7 +92,7 @@ int handling_CANRead_cmd(char *sARGIN_CanReadMesg)
 	unsigned int uiLen = strlen(sARGIN_CanReadMesg),
                  uiPosOfCmdSeparator_Colon = strcspn(sARGIN_CanReadMesg, ":");
     char sMesg[16] = {0x00};
-    strncpy(sMesg, sARGIN_CanReadMesg+uiPosOfCmdSeparator_Colon+1, uiLen-uiPosOfCmdSeparator_Colon-2);
+    strncpy(sMesg, sARGIN_CanReadMesg+uiPosOfCmdSeparator_Colon+1, uiLen-uiPosOfCmdSeparator_Colon-3);
     if (strncmp(sMesg, "ALL", 3) == 0)
     {
         iError = CAN0_GetAllTelegram();
