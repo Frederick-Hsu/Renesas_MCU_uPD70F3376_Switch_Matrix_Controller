@@ -106,39 +106,4 @@ int Set_CAN_BaudRate(char sBaudRateInfo[])
 }
 
 
-static CanGetMode_t gMode = IMMEDIATE;
-extern CanTelegramQueue_t canTelegramQueue;
 
-int Set_CAN_ReceiveMode(char sModeInfo[])
-{
-    int iError = 0;
-    if (0 ==strcmp(sModeInfo, "IMMEDIATE"))
-    {
-        gMode = IMMEDIATE;
-    }
-    else if (0 == strcmp(sModeInfo, "CACHE"))
-    {
-        gMode = CACHE;
-        canTelegramQueue = CreateInitTelegramQueue();
-    }
-    else
-    {
-        iError = -52;
-    }
-    return iError;
-}
-
-int CAN0_GetAllTelegram(void)
-{
-    return ReadTelegramFromTail(canTelegramQueue, canTelegramQueue.length);
-}
-
-int CAN0_GetLatestTelegram(void)
-{
-    return ReadTelegramFromTail(canTelegramQueue, 1);
-}
-
-CanGetMode_t Retrieve_CAN_ReceiveMode(void)
-{
-    return gMode;
-}

@@ -39,10 +39,11 @@
 /* End user code for include definition. Do not edit comment generated here */
 #include "user_define.h"
 #include "CAN/CAN_Control.h"
-#include "CAN/CAN_Telegrams.h"
+#include "CAN/can_telegrams_circular_queue.h"
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 /*
 *******************************************************************************
@@ -108,7 +109,13 @@ __interrupt void MD_INTC0TRX(void)
 **-----------------------------------------------------------------------------
 */
 
-CanTelegramQueue_t canTelegramQueue = {NULL, NULL, 0};
+static CanGetMode_t gMode = IMMEDIATE;
+
+#if (TELEGRAM_ARRAY_TYPE == TELEGRAM_ARRAY_TYPE1)
+    static TelegramsCircularQueue_t queue = {NULL, 0, 0, 0};
+#elif (TELEGRAM_ARRAY_TYPE == TELEGRAM_ARRAY_TYPE2)
+    static TelegramsCircularQueue_t queue = {{0x00}, 0, 0, 0};
+#endif
 
 __interrupt void MD_INTC0REC(void)
 {
@@ -138,10 +145,53 @@ __interrupt void MD_INTC0REC(void)
     else if (Retrieve_CAN_ReceiveMode() == CACHE)
     {
         sprintf(canTelegram, "$CAN GET:0x%04X 0x%s!", canid, canMesg);
-        EnTelegramQueue(&canTelegramQueue, canTelegram);
+        EnqueueIntoTelegramsCircularQueue(&queue, canTelegram);
     }
 	/* End user code. Do not edit comment generated here */
 }
+
+int Set_CAN_ReceiveMode(char sModeInfo[])
+{
+    int iError = 0;
+    if (0 ==strcmp(sModeInfo, "IMMEDIATE"))
+    {
+        gMode = IMMEDIATE;
+        DestroyTelegramsCircularQueue(&queue);
+    }
+    else if (0 == strcmp(sModeInfo, "CACHE"))
+    {
+        gMode = CACHE;
+        InitTelegramsCircularQueue(&queue);
+    }
+    else
+    {
+        iError = -52;
+    }
+    return iError;
+}
+
+void PrintOutCanTelegram(Telegram oneItem)
+{
+    UCHAR mesg[64] = {0x00};
+    sprintf(mesg, "%s\n", oneItem);
+    UARTD2_SendData(mesg, strlen(mesg));
+}
+
+int CAN0_GetAllTelegram(void)
+{
+    return ReverselyFetchTelegrams(queue, MAX_CIRCULAR_QUEUE_SIZE, PrintOutCanTelegram);
+}
+
+int CAN0_GetLatestTelegram(void)
+{
+    return ReverselyFetchTelegrams(queue, 1, PrintOutCanTelegram);
+}
+
+CanGetMode_t Retrieve_CAN_ReceiveMode(void)
+{
+    return gMode;
+}
+
 
 /*
 **-----------------------------------------------------------------------------
