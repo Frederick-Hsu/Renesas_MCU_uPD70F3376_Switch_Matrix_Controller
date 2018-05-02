@@ -10,7 +10,6 @@
 #include "../macrodriver.h"
 #include "../can.h"
 #include "CAN_Control.h"
-#include "CAN_Telegrams.h"
 #include <string.h>
 
 #pragma ioreg
