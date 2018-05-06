@@ -170,16 +170,14 @@ int Set_CAN_ReceiveMode(char sModeInfo[])
     return iError;
 }
 
-void PrintOutCanTelegram(Telegram oneItem)
+void PrintOutCanTelegram(char *telegram)
 {
-    UCHAR mesg[64] = {0x00};
-    sprintf(mesg, "%s\n", oneItem);
-    UARTD2_SendData(mesg, strlen(mesg));
+    UARTD2_SendData(telegram, strlen(telegram)*sizeof(char));
 }
 
 int CAN0_GetAllTelegram(void)
 {
-    return ReverselyFetchTelegrams(queue, MAX_CIRCULAR_QUEUE_SIZE, PrintOutCanTelegram);
+    return ReverselyFetchTelegrams(queue, queue.actualQueueSize, PrintOutCanTelegram);
 }
 
 int CAN0_GetLatestTelegram(void)
