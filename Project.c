@@ -29,16 +29,26 @@
 void PrintOut_Project_Information()
 {
 	UARTD2_SendData(THIS_PROJECT, strlen(THIS_PROJECT)*sizeof(char));
-	UARTD2_SendData(DEVICE, strlen(DEVICE)*sizeof(char));
-	UARTD2_SendData(PROPERTY_PURPOSE, strlen(PROPERTY_PURPOSE)*sizeof(char));
-	UARTD2_SendData(DEVELOPMENT_TEAM, strlen(DEVELOPMENT_TEAM)*sizeof(char));
+    UARTD2_WaitForSendDataCompleted();
+	
+    UARTD2_SendData(DEVICE, strlen(DEVICE)*sizeof(char));
+    UARTD2_WaitForSendDataCompleted();
+	
+    UARTD2_SendData(PROPERTY_PURPOSE, strlen(PROPERTY_PURPOSE)*sizeof(char));
+    UARTD2_WaitForSendDataCompleted();
+	
+    UARTD2_SendData(DEVELOPMENT_TEAM, strlen(DEVELOPMENT_TEAM)*sizeof(char));
+    UARTD2_WaitForSendDataCompleted();
+    
 	UARTD2_SendData(COPYRIGHT, strlen(COPYRIGHT)*sizeof(char));
+    UARTD2_WaitForSendDataCompleted();
 	return;
 }
 
 void Display_SW_Version()
 {
 	UARTD2_SendData(CURRENT_VERSION, strlen(CURRENT_VERSION)*sizeof(char));
+    UARTD2_WaitForSendDataCompleted();
 	return;
 }
 

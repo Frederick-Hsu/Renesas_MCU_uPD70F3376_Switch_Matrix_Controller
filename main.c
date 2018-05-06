@@ -153,6 +153,7 @@ void  main(void)
 	{
 		NOP();
 	}
+    PrintOut_Project_Information();
 	Display_SW_Version();
 
 	
