@@ -42,7 +42,7 @@
     Status IsTelegramsCircularQueueEmpty(TelegramsCircularQueue_t queue);
     void DestroyTelegramsCircularQueue(TelegramsCircularQueue_t *queue);
     void TraverseTelegramsCircularQueue(TelegramsCircularQueue_t queue, void (*access)(Telegram));
-    Status ReverselyFetchTelegrams(TelegramsCircularQueue_t queue, int count, void (*fetch)(Telegram));
+    Status ReverselyFetchTelegrams(TelegramsCircularQueue_t queue, int count, void (*fetch)(char*));
 
     void DisplayTelegramCircularQueue(TelegramsCircularQueue_t queue);
 

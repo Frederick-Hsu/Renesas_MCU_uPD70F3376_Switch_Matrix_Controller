@@ -127,9 +127,10 @@ void TraverseTelegramsCircularQueue(TelegramsCircularQueue_t queue, void (*acces
     }
 }
 
-Status ReverselyFetchTelegrams(TelegramsCircularQueue_t queue, int count, void (*fetch)(Telegram))
+Status ReverselyFetchTelegrams(TelegramsCircularQueue_t queue, int count, void (*fetch)(char*))
 {
     unsigned int startIndex, index = 0;
+    char totalTelegrams[MAX_CIRCULAR_QUEUE_SIZE * MAX_LENGTH_OF_ONE_TELEGRAM + MAX_CIRCULAR_QUEUE_SIZE + 1] = {0x00};
     if (count > queue.actualQueueSize)
     {
         return ERROR;
@@ -146,7 +147,9 @@ Status ReverselyFetchTelegrams(TelegramsCircularQueue_t queue, int count, void (
     
     for (index = 0; index < count; index++)
     {
-        fetch(queue.container[startIndex]);
+        strcat(totalTelegrams, queue.container[startIndex]);
+        strcat(totalTelegrams, "\n");
+        
         if (startIndex == 0)
         {
             startIndex = MAX_CIRCULAR_QUEUE_SIZE-1;     /* Reset */
@@ -156,6 +159,7 @@ Status ReverselyFetchTelegrams(TelegramsCircularQueue_t queue, int count, void (
             startIndex--;
         }
     }
+    fetch(totalTelegrams);
     return OK;
 }
 
