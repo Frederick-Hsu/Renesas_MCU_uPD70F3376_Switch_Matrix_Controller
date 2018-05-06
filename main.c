@@ -180,8 +180,8 @@ void  main(void)
 	C0MASK1H = 0x1fff;
 	C0MASK1L = 0xffff;
 	
-	CAN0_MsgSetIdDataDlc(1, 0x0002, canData1, 8);
-	CAN0_MsgTxReq(1);
+	//CAN0_MsgSetIdDataDlc(1, 0x0002, canData1, 8);
+	//CAN0_MsgTxReq(1);
 	
 	while (1) 
 	{

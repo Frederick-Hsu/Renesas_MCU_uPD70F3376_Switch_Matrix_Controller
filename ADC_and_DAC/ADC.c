@@ -219,7 +219,7 @@ void Calculate_Analog_Input_Value_for_1Ch(E_ADC_CH 	eADC_CHn,
 	 * Remarked by XU ZAN@2014-02-20
 	 */
 	// fTempValue = ((float)(iADCValue-28))/1810.16;	
-	fTempValue = 0.003059*(iADCValue-59);
+	fTempValue = 0.00338*(iADCValue-23);
 
 	// fAnalogInputValue = &fTempValue;
 	memcpy(fAnalogInputValue, &fTempValue, sizeof(float));
