@@ -318,6 +318,7 @@ void UARTD0_SendEndCallback(void);
 void UARTD0_ErrorCallback(UCHAR err_type);
 __interrupt void MD_INTUD0R(void);
 __interrupt void MD_INTUD0T(void);
+void UARTD2_WaitForSendDataCompleted(void);
 __interrupt void MD_INTUD0S(void);
 void UARTD2_Init(void);
 void UARTD2_Start(void);

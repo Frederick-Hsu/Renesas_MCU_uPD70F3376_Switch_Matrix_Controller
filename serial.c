@@ -459,7 +459,11 @@ MD_STATUS UARTD2_SendData(UCHAR* txbuf, USHORT txnum)
 */
 {
 	MD_STATUS status = MD_OK;
-	
+	#if 0
+    while (gUartd2TxCnt != 0)
+    {
+    }
+    #endif
 	if (txnum < 1)
 	{
 		status = MD_ARGERROR;

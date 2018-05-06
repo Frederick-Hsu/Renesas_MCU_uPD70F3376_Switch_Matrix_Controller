@@ -326,6 +326,16 @@ __interrupt void MD_INTUD2T(void)
 	}
 }
 
+void UARTD2_WaitForSendDataCompleted(void)
+{
+    while (gUartd2TxCnt > 0)
+    {
+        NOP();
+    }
+    /* When finished the transmission : */
+    UARTD2_SendEndCallback();
+}
+
 __interrupt void MD_INTUD2S(void)
 /*
 **-----------------------------------------------------------------------------
