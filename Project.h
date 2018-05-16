@@ -9,13 +9,13 @@
  *			: 
  *			: Development project team :
  *			: 	Team leader : HENRY XING
- *			:	Hardware engineers : HENRY XING,  NEIL WU
- *			:	Software engineers : XU ZAN, SHI GANG, MA LIANG
+ *			:	Hardware engineers : HENRY XING
+ *			:	Software engineers : XU ZAN
  *
  * Author		: XU ZAN
  * Creation date	: Thu.	July 19, 2012
  *
- * Copyright(C)		2010 --- 2012		Hella (Shanghai) Electronics Co., Ltd.
+ * Copyright(C)		2010 --- 2020
  * All rights reserved.
  * 
  ************************************************************************************************************************************/
@@ -23,11 +23,11 @@
 #ifndef _PROJECT_H
 #define _PROJECT_H
 
-	#define THIS_PROJECT	"Project : Switch Matrix Controller\n"
+	#define THIS_PROJECT	"Project : DCU\n"
 	#define DEVICE		"MCU : Renesas V850ES/FG3, type : uPD70F3376\n"
 	#define PROPERTY_PURPOSE	"It realizes that :\n1. Controlling switch matrix;\n2. ADC measuring and DAC outputing;\n3. CAN bus analyzer and transciver;\n4. Digital IN and OUT.\n"
-	#define DEVELOPMENT_TEAM	"Development team : \n\tTeam leader : HENRY XING \n\tHW : HENRY XING, NEIL WU \n\tSW : XU ZAN\n"
-	#define COPYRIGHT		"Copyright(C)  2010---2012  Hella (Shanghai) Electronics Co., Ltd.\nAll rights reserved.\n"
+	#define DEVELOPMENT_TEAM	"Development team : \n\tTeam leader & HW : HENRY XING \n\tSW : Frederick Hsu\n"
+	#define COPYRIGHT		"Copyright(C)  2010---2020 \nAll rights reserved.\n"
 	
 	
 	/*********************************************************************************************************/
