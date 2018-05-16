@@ -37,6 +37,9 @@
 #include "user_define.h"
 
 #include "PWM/PWM_Out.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 /*
 *******************************************************************************
@@ -46,8 +49,11 @@
 /* Start user code for global definition. Do not edit comment generated here */
 /* End user code for global definition. Do not edit comment generated here */
 
+    #pragma interrupt INTTM0EQ0  MD_INTTM0EQ0
+    
 #if (PWM_OUT_GENERATE_OPTION == PWM_OUT_GENRATE_OPTION2)
-	#pragma interrupt INTTAA0CC0 MD_INTTAA0CC0
+	
+    #pragma interrupt INTTAA0CC0 MD_INTTAA0CC0
 	#pragma interrupt INTTAA1CC0 MD_INTTAA1CC0
 
 	extern struct PwmOutChnSelector g_stPwmOutChn;
@@ -204,7 +210,44 @@
 	}
 
 #endif
+
+    /*
+    **-----------------------------------------------------------------------------
+    **
+    **	Abstract:
+    **		This function is INTTM0EQ0 interrupt service routine.
+    **
+    **	Parameters:
+    **		None
+    **
+    **	Returns:
+    **		None
+    **
+    **-----------------------------------------------------------------------------
+    */
+    extern int multiplier;
+    extern int keepMultiplier;
+    
+    extern unsigned long canId;
+    extern UCHAR canDataByte[8];
+    
+    __interrupt void MD_INTTM0EQ0(void)
+    {
+    	/* Start user code. Do not edit comment generated here */
+        if (multiplier == 0)
+        {
+            /* Send out the CAN telegram */
+            if (strlen(canDataByte) != 0)
+            {
+                CAN0_MsgSetIdDataDlc(1, canId, canDataByte, strlen(canDataByte));
+                CAN0_MsgTxReq(1);
+            }
+            /* Restore the multiplier to repeat the CAN telegram periodically */
+            multiplier = keepMultiplier;
+        }
+        multiplier--;
+    	/* End user code. Do not edit comment generated here */
+    }
+
 /* Start adding user code. Do not edit comment generated here */
 /* End user code adding. Do not edit comment generated here */
-
-
