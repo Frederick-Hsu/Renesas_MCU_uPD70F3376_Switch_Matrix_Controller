@@ -19,6 +19,8 @@
 #include <string.h>
 
 extern int g_iErrorCodeNo;
+unsigned long canId = 0x00;
+UCHAR canDataByte[8] = {0x00};
 
 int handling_CANWrite_cmd(char *sARGIN_CanWriteMesg)
 {
@@ -54,8 +56,16 @@ int handling_CANWrite_cmd(char *sARGIN_CanWriteMesg)
 		return iError;
 	}
 	iError = Parse_CAN_Data(sCanData, bytCanData);
-	iError = CAN0_MsgSetIdDataDlc(1, ulCanId, bytCanData, (strlen(sCanData)/2 - 1));
-    CAN0_MsgTxReq(1);
+    if (REPEAT == Retrieve_CAN_ReceiveMode())
+    {
+        canId = ulCanId;
+        sprintf(canDataByte, "%s", bytCanData);
+    }
+    else if (IMMEDIATE == Retrieve_CAN_ReceiveMode())
+    {
+	    iError = CAN0_MsgSetIdDataDlc(1, ulCanId, bytCanData, (strlen(sCanData)/2 - 1));
+        CAN0_MsgTxReq(1);
+    }
 	return iError;
 }
 
