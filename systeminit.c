@@ -97,6 +97,8 @@ void  SystemInit(void)
 	TAA0_Init();
 	/*Initializes TAA1*/
 	TAA1_Init();
+    /* Initializes TMM channel 0 */
+    TMM0_Init();
 	/* PCL setting */
 	PCLM = CG_PCL_DISABLE;
 	
