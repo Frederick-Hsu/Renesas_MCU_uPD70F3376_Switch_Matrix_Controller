@@ -13,7 +13,9 @@
     typedef enum GetMode
     {
         IMMEDIATE = 0,
-        CACHE = 1
+        CACHE = 1,
+        REPEAT = 2,
+        RESTORE = 3
     }
     CanGetMode_t;
     
