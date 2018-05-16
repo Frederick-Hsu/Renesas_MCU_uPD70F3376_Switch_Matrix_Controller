@@ -108,8 +108,6 @@ __trap01:
 	reti
 	.section "INTTAA4CC1", text		--INTTAA4CC1
 	reti
-	.section "INTTM0EQ0", text		--INTTM0EQ0
-	reti
 	.section "INTCB0R", text		--INTCB0R
 	reti
 	.section "INTCB0T", text		--INTCB0T
