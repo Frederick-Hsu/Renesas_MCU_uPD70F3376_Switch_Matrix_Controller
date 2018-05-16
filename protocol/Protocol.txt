@@ -205,6 +205,8 @@
                     $CAN CONFIG:BAUD 500kbps!
                     $CAN CONFIG:MODE IMMEDIATE!
                     $CAN CONFIG:MODE CACHE!
+                    $CAN CONFIG:MODE REPEAT:CYCLE 1000!   (NOTE : the unit is msec)
+                    $CAN CONFIG:MODE RESTORE!
 
 		SYSTem :
 			Error catalog :
