@@ -150,9 +150,30 @@ __interrupt void MD_INTC0REC(void)
 	/* End user code. Do not edit comment generated here */
 }
 
+int multiplier = 0;
+int keepMultiplier = 0;
+
+void SetTimer(char cycle[])
+{
+    unsigned int uiLen = strlen(cycle);
+    unsigned int uiPosOfCmdSeparator_Space = strcspn(cycle, " ");
+    char strCycleValue[16] = {0x00};
+    int iCycleValue = 0;
+    
+    strncpy(strCycleValue, cycle + uiPosOfCmdSeparator_Space + 1,
+            uiLen - uiPosOfCmdSeparator_Space - 1);
+    Convert_Str_To_Int(strCycleValue, &iCycleValue);
+    
+    multiplier = iCycleValue * 10;
+    keepMultiplier = multiplier;
+}
+
 int Set_CAN_ReceiveMode(char sModeInfo[])
 {
     int iError = 0;
+    char cycleInfo[16] = {0x00};
+    unsigned int uiLen = 0, uiPosOfCmdSeparator_Colon = 0, uiPosOfCmdSeparator_Space = 0;
+    
     if (0 ==strcmp(sModeInfo, "IMMEDIATE"))
     {
         gMode = IMMEDIATE;
@@ -162,6 +183,23 @@ int Set_CAN_ReceiveMode(char sModeInfo[])
     {
         gMode = CACHE;
         InitTelegramsCircularQueue(&queue);
+    }
+    else if (0 == strncmp(sModeInfo, "REPEAT", 6))
+    {
+        gMode = REPEAT;
+        
+        uiLen = strlen(sModeInfo);
+        uiPosOfCmdSeparator_Colon = strcspn(sModeInfo, ":");
+        strncpy(cycleInfo, 
+                sModeInfo + uiPosOfCmdSeparator_Colon + 1, 
+                uiLen - uiPosOfCmdSeparator_Colon - 1);
+        SetTimer(cycleInfo);
+        TMM0_Start();
+    }
+    else if (0 == strncmp(sModeInfo, "RESTORE", 7))
+    {
+        gMode = IMMEDIATE;
+        TMM0_Stop();
     }
     else
     {
