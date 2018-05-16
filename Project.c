@@ -9,13 +9,13 @@
  *			: 
  *			: Development project team :
  *			: 	Team leader : HENRY XING
- *			:	Hardware engineers : HENRY XING,  NEIL WU
- *			:	Software engineers : XU ZAN, SHI GANG, MA LIANG
+ *			:	Hardware engineers : HENRY XING
+ *			:	Software engineers : XU ZAN
  *
  * Author		: XU ZAN
  * Creation date	: Thu.	July 19, 2012
  *
- * Copyright(C)		2010 --- 2012		Hella (Shanghai) Electronics Co., Ltd.
+ * Copyright(C)		2010 --- 2020
  * All rights reserved.
  * 
  ************************************************************************************************************************************/
