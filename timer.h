@@ -368,6 +368,8 @@
 #define TAA0_CCR0_VALUE			0x2
 /* TAA1 compare register 0 (TAA1CCR0)*/
 #define TAA1_CCR0_VALUE			0xc7f
+/* TMM0 compare register 0 (TM0CMP0) */
+#define TMM0_CMP0_VALUE         0xc7f
 enum TMChannel { TMCHANNEL0, TMCHANNEL1, TMCHANNEL2, TMCHANNEL3 };
 enum TMOutput { STANDARD, INACTIVE, ACTIVE, FREEZE };
 
@@ -386,6 +388,12 @@ void TAA1_Start(void);
 void TAA1_Stop(void);
 MD_STATUS TAA1_ChangeTimerCondition(USHORT* array_reg, UCHAR array_num);
 __interrupt void MD_INTTAA1CC0(void);
+
+void TMM0_Init(void);
+void TMM0_Start(void);
+void TMM0_Stop(void);
+void TMM0_ChangeTimerCondition(USHORT regvalue);
+__interrupt void MD_INTTM0EQ0(void);
 /* Start user code for definition. Do not edit comment generated here */
 /* End user code for definition. Do not edit comment generated here */
 #endif

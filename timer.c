@@ -286,6 +286,91 @@ MD_STATUS TAA1_ChangeTimerCondition(USHORT* array_reg, UCHAR array_num)
 	return (status);
 }
 
+/*
+**-----------------------------------------------------------------------------
+**
+**	Abstract:
+**		This function initializes TMM0 counter.
+**
+**	Parameters:
+**		None
+**
+**	Returns:
+**		None
+**
+**-----------------------------------------------------------------------------
+*/
+void TMM0_Init(void)
+{
+	TM0CE = 0;	/* TMM0 operation disable */
+	TM0EQMK0 = 1;	/* INTTM0EQ0 interrupt disable */
+	TM0EQIF0 = 0;	/* clear INTTM0EQ0 interrupt flag */
+	/* Set INTTM0EQ0 lowest priority */
+	TM0EQIC0 |= 0x07;
+	TM0CTL0 = TMM_INTERNAL_CLOCK0;
+	TM0CMP0 = TMM0_CMP0_VALUE;
+}
+
+/*
+**-----------------------------------------------------------------------------
+**
+**	Abstract:
+**		This function starts TMM0 counter.
+**
+**	Parameters:
+**		None
+**
+**	Returns:
+**		None
+**
+**-----------------------------------------------------------------------------
+*/
+void TMM0_Start(void)
+{
+	TM0EQIF0 = 0;	/* clear INTTM0EQ0 interrupt flag */
+	TM0EQMK0 = 0;	/* INTTM0EQ0 interrupt enable */
+	TM0CE = 1;	/* TMM0 operation enable */
+}
+
+/*
+**-----------------------------------------------------------------------------
+**
+**	Abstract:
+**		This function stops TMM0 counter.
+**
+**	Parameters:
+**		None
+**
+**	Returns:
+**		None
+**
+**-----------------------------------------------------------------------------
+*/
+void TMM0_Stop(void)
+{
+	TM0CE = 0;	/* TMM0 operation disable */
+	TM0EQMK0 = 1;	/* INTTM0EQ0 interrupt disable */
+	TM0EQIF0 = 0;	/* clear INTTM0EQ0 interrupt flag */
+}
+
+/*
+**-----------------------------------------------------------------------------
+**
+**	Abstract:
+**		This function changes TMM0 compare register 0 value.
+**
+**	Parameters:
+**		regvalue :	 value for data register
+**
+**	Returns:
+**		None
+**
+**-----------------------------------------------------------------------------
+*/
+void TMM0_ChangeTimerCondition(USHORT regvalue)
+{
+	TM0CMP0 = regvalue;
+}
 /* Start adding user code. Do not edit comment generated here */
 /* End user code adding. Do not edit comment generated here */
 
