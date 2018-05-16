@@ -5,7 +5,7 @@
  * Description	: Dedicatedly show the revision history in this independent file.
  * Author	: XU ZAN
  * Date		: Fri.	July 27, 2012
- * Copyright(C)		2010 --- 2012		Hella (Shanghai) Electronics Co., Ltd.
+ * Copyright(C)		2010 --- 2020
  * All rights reserved.
  *
  ***************************************************************************************************/
@@ -71,9 +71,11 @@
 	
 	
 	#if (VERSION_UPGRADE == YES)
-		#define CURRENT_VERSION		"Version: V0.01.1    Build date: 2012-07-27"
+        #define CURRENT_VERSION     "Version: V1.0.1     Build date: 2018-05-16"
+		// #define CURRENT_VERSION		"Version: V0.01.1    Build date: 2012-07-27"
 	#else
-		#define PREVIOUS_VERSION	""	
+        #define PREVIOUS_VERSION    "Version: V0.01.1    Build date: 2012-07-27"
+		// #define PREVIOUS_VERSION	""	
 	#endif
 
 #endif	/*    _VERSION_H    */
